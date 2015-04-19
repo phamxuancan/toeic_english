@@ -12,32 +12,16 @@ use Illuminate\Support\Facades\Hash;
 */
 
 Route::get('/', 'WelcomeController@index');
-
 Route::get('home', 'HomeController@index');
-Route::get('/users/authentication', 'UserController@authentication');
+Route::get('/users/authentications', 'UserController@authentications');
 Route::post('/users/authentication', 'UserController@authentication');
-Route::get('/users/testsignup',function(){
-    $input = array(
-        'username'=>'xuancan',
-        'password'=> ('123456')
-    );
-   App\User::create(
-   array(
-       'username'=>'xuancan',
-       'password'=> Hash::make('123456')
-       )
-   );
-    try{
-        var_dump(Auth::attempt($input));
-    }catch (Exception $e){
-        echo $e->getMessage();
-    }
-
-});
 Route::get('/users/home','UserController@index');
 Route::post('/users/signup', 'UserController@signup');
+Route::post('/questions/createQuestion','QuestionController@createQuestion');
+Route::get('/questions','QuestionController@getAllQuestions');
 $router->group(['middleware' => 'auth'],function(){
-
+    Route::get('/users','UserController@index');
+    Route::get('/users/logout','UserController@logout');
 });
 Route::controllers([
 	'auth' => 'Auth\AuthController',

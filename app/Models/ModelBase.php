@@ -19,14 +19,19 @@
                 $fieldDB  []= $key;
                 $valueData[]= $value;
             }
-            $infields = implode(",",$fieldDB);
-            $inValues = implode("','",$valueData);
-            $sql = "INSERT INTO $this->table_name ($infields) VALUES ('".$inValues."')";
+            $infields   = implode(",",$fieldDB);
+            $inValues   = implode("','",$valueData);
+            $sql        = "INSERT INTO $this->table_name ($infields) VALUES ('".$inValues."')";
             DBconnect::connection()->insert($sql);
             return DB::getPdo()->lastInsertId();
         }
         public function getObjectsInArrayIds($field,$inArrayIds){
-            $sql = "SELECT * FROM $this->table_name WHERE $field IN ('".$inArrayIds."') ";
+            $sql    = "SELECT * FROM $this->table_name WHERE $field IN ('".$inArrayIds."') ";
+            $data   = DBconnect::connection()->select($sql);
+            return $data;
+        }
+        public function getAllObjectInTable(){
+            $sql  = "SELECT * FROM $this->table_name ORDER BY ID ASC";
             $data = DBconnect::connection()->select($sql);
             return $data;
         }

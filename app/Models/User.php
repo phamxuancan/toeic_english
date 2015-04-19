@@ -18,7 +18,4 @@ use App\Models\ModelBase;
             }
             return self::$instance;
         }
-        public function  authentication(){
-
-        }
     }

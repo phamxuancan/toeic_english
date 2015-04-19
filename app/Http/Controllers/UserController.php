@@ -7,6 +7,7 @@
  */
     namespace App\Http\Controllers;
     use App\Http\Controllers;
+    use App\Models\File;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Hash;
@@ -14,12 +15,13 @@
 
     class UserController extends Controller{
         public function index(){
-            if(Auth::check()){
-
-                echo "da login";
-            }else{
-                echo "Chua login";
-            }
+            return view('users.index');
+        }
+        public function authentications(){
+                if(Auth::check()){
+                    return redirect()->to('users');
+                }
+                return view('user.login');
         }
         public function authentication(Request $request){
             try{
@@ -35,21 +37,20 @@
         }
         public function signup(Request $request){
             try{
-                $username = $request->get('user_name','');
+                $username = $request->get('username','');
                 $password = $request->get('password','');
-                $email = $request->get('email','');
+                $email    = $request->get('email','');
                 $filename = '';
                 if($request->hasFile('avatar')){
-                    $avatar = $request->file('avatar');
-                    $extension = $avatar->getClientOriginalExtension();
-                    $filename = time() . "_" . rand(0,10000000). "." . $extension;
-                    $avatar->move('uploads/avatar/',$filename);
+                    $avatar     = $request->file('avatar');
+                    $filename   = File::uploadFile($avatar,'uploads/avatar/');
                 }
-                $user_infor = array(
-                    "username"=> $username,
-                    "password"=>Hash::make($password),
+                $user_infor     = array(
+                    "username"  => $username,
+                    "email"     => $email,
+                    "password"  =>Hash::make($password),
                     "created_at"=>date('Y-m-d h:i:s'),
-                    "avatar"     =>$filename
+                    "avatar"    =>$filename
                 );
                 $user_id = User::getInstance()->insert($user_infor);
                 if($user_id){
@@ -58,5 +59,9 @@
             }catch (\Exception $e){
                 return response()->json(array("message"=>$e->getMessage(),"error"=>1));
             }
+        }
+        public function logout(){
+            Auth::logout();
+            return view('user.login');
         }
     }
