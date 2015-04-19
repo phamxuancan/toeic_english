@@ -14,6 +14,7 @@
 
     class UserController extends Controller{
         public function index(){
+			
             if(Auth::check()){
 
                 echo "da login";
@@ -22,16 +23,19 @@
             }
         }
         public function authentication(Request $request){
-            try{
-                $input = $request->all();
-                if(Auth::attempt($input)){
-                    return response()->json(array('message'=>'Login Success!','error'=>0));
-                }else{
-                    return response()->json(array('message'=>'Login fail!','error'=>1));
-                }
-            }catch (\Exception $e){
-                return response()->json(array('message'=>$e->getMessage(),'error'=>1));
-            }
+            if($request->isMethod('post')){
+				try{
+					$input = $request->all();
+					if(Auth::attempt($input)){
+						return response()->json(array('message'=>'Login Success!','error'=>0));
+					}else{
+						return response()->json(array('message'=>'Login fail!','error'=>1));
+					}
+				}catch (\Exception $e){
+					return response()->json(array('message'=>$e->getMessage(),'error'=>1));
+				}
+			}
+			return view('user.login');
         }
         public function signup(Request $request){
             try{
