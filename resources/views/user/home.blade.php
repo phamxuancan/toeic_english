@@ -3,7 +3,9 @@
     <center><input type="button" value="bắt đầu" id="user_home_begin" /></center>
 
     <div style="border: 1px red solid;margin-left: 50px; margin-top: 10px; -webkit-border-radius: 20px;">
-        <center> nội dung thông báo, nếu click nội dung hide và show đề thi </center>
+        <div id="notification">
+            <center> nội dung thông báo, nếu click nội dung hide và show đề thi </center>
+        </div>
         <div id="question"class="row">
             <table class="table">
               <thead>
@@ -241,4 +243,21 @@
     <div class="row text-center finish">
         <button type="button" class="btn btn-default ">finish</button>
     </div>
+@endsection
+
+@section('javascript')
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('document').ready(function(){
+            $('#question').hide();
+            $('.finish').hide();
+
+            $('#user_home_begin').click(function(){
+                $("#notification").hide();
+                $('#question').show();
+                $('.finish').show();
+            });
+        });
+    </script>
 @endsection
