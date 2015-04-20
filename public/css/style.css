@@ -3,15 +3,18 @@
 	border-radius: 4px;
 	background-color: blue;
 	border: 1px solid black;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #left{
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 
 #right{
 	border: 1px solid black;
 	background-color: blue;
+    width: 21%;
 }
 #right h2{
 	color: white;
@@ -20,6 +23,6 @@
 	color: white;
 }
 
-#question{
-	border: 2px solid black;
-}
+.navbar{margin-left: 65px;}
+.table{width: 100%;max-width: 95%; margin-bottom: 20px;   margin-left: 30px;}
+.finish{margin-top: 10px;}
