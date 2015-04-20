@@ -15,9 +15,10 @@
 
     class UserController extends Controller{
         public function index(){
-            return view('users.index');
+            return view('user.home');
         }
-        public function authentications(){
+
+        public function login(){
                 if(Auth::check()){
                     return redirect()->to('users');
                 }
@@ -37,6 +38,7 @@
 				}
 			}else return view('user.login');
         }
+
         public function signup(Request $request){
             if($request->isMethod('post')) {
                 try {

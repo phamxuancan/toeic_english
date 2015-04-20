@@ -10,8 +10,13 @@
     <!-- navbar -->
     <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">
-            <li><a href="/users/signup">Đăng ký</a></li>
-            <li><a href="/users/authentication">Đăng nhập</a></li>
+            @if(!Auth::check())
+                <li><a href="/users/login">Đăng nhập</a></li>
+                <li><a href="/users/signup">Đăng ký</a></li>
+            @else
+                <li><a href="/users/info">{{Auth::user()['username']}}</a></li>
+                <li><a href="/users/logout">Logout</a></li>
+            @endif
         </ul>
     </nav>
 </div>

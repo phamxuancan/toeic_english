@@ -2,7 +2,7 @@
  <script src="<?php echo URL::to('/') ?>/bootstrap/js/jquery-1.11.2.min.js"></script>
 @section('content')
     <div id="outside_form">
-        <form id="form_login" method="post" class="text-center form-horizontal" role="form" style="background: #dfffd0;margin-top:50px;" enctype="multipart/form-data">
+        <form action="/users/authentication" id="form_login" method="post" class="text-center form-horizontal" role="form" style="background: #dfffd0;margin-top:50px;" enctype="multipart/form-data">
             <div class="form-group alert-danger alert_error"></div>
             <div class="form-group ">
                  <label class="control-label col-lg-2 col-lg-offset-3" for="username">username :</label>
@@ -13,15 +13,12 @@
             <div class="form-group ">
                  <label class="control-label col-lg-2 col-lg-offset-3  " for="password">Password:</label>
                  <div class="col-lg-2 ">
-                    <input type="text" name="password" id="password" class="form-group" />
+                    <input type="password" name="password" id="password" class="form-group" />
                  </div>
             </div>
             <div class="form-group">
                  <div class="col-lg-offset-5 col-lg-1">
                     <input id="bnt_sub" class="btn btn-sm btn-success" data-loading-text="Loading..." type="submit"></span>
-                 </div>
-                 <div class="col-lg-1">
-                    <span id="bnt_sub" class="btn btn-sm btn-link" data-loading-text="Loading..." data-toggle="modal" data-target="#registerForm" >Register User?</span>
                  </div>
                  {{--<input type="hidden" name="token" value="{{ csrf_token() }}">--}}
             </div>
