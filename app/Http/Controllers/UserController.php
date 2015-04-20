@@ -29,7 +29,7 @@
 				try{
 					$input = $request->all();
 					if(Auth::attempt($input)){
-						return response()->json(array('message'=>'Login Success!','error'=>0));
+                        return redirect()->to('/');
 					}else{
 						return response()->json(array('message'=>'Login fail!','error'=>1));
 					}

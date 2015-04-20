@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\Hash;
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'UserController@index');
 Route::get('/home', 'HomeController@index');
+
 Route::get('/users/login', 'UserController@login');
 Route::post('/users/authentication', 'UserController@authentication');
 Route::get('/users/home','UserController@index');

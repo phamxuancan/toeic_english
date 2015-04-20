@@ -6,6 +6,26 @@
         <div class="form-group col-lg-12" >
           <span class="alert-danger error_register"></span>
        </div>
+--------------
+       <div class="form-group ">
+            <label class="control-label col-lg-2 col-lg-offset-3" for="username">username :</label>
+            <div class="col-lg-2">
+               <input type="text" name="username" id="username" class="form-group" />
+            </div>
+       </div>
+       <div class="form-group ">
+            <label class="control-label col-lg-2 col-lg-offset-3  " for="password">Password:</label>
+            <div class="col-lg-2 ">
+               <input type="password" name="password" id="password" class="form-group" />
+            </div>
+       </div>
+       <div class="form-group">
+            <div class="col-lg-offset-5 col-lg-1">
+               <input id="bnt_sub" class="btn btn-sm btn-success" data-loading-text="Loading..." type="submit"></span>
+            </div>
+            {{--<input type="hidden" name="token" value="{{ csrf_token() }}">--}}
+       </div>
+       ----------
         <div class="form-group col-lg-11" >
             <label for="register_name" class="control-label col-lg-2">Username:</label>
             <input type="text" name="username" id="register_name" class="form-control col-lg-10"/>
