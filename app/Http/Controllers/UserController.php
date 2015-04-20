@@ -34,33 +34,35 @@
 				}catch (\Exception $e){
 					return response()->json(array('message'=>$e->getMessage(),'error'=>1));
 				}
-			}
-			return view('user.login');
+			}else return view('user.login');
         }
         public function signup(Request $request){
-            try{
-                $username = $request->get('user_name','');
-                $password = $request->get('password','');
-                $email = $request->get('email','');
-                $filename = '';
-                if($request->hasFile('avatar')){
-                    $avatar = $request->file('avatar');
-                    $extension = $avatar->getClientOriginalExtension();
-                    $filename = time() . "_" . rand(0,10000000). "." . $extension;
-                    $avatar->move('uploads/avatar/',$filename);
+            if($request->isMethod('post')) {
+                try {
+                    $username = $request->get('username', '');
+                    $password = $request->get('password', '');
+                    $email = $request->get('email', '');
+                    $filename = '';
+                    if ($request->hasFile('avatar')) {
+                        $avatar = $request->file('avatar');
+                        $extension = $avatar->getClientOriginalExtension();
+                        $filename = time() . "_" . rand(0, 10000000) . "." . $extension;
+                        $avatar->move('uploads/avatar/', $filename);
+                    }
+                    $user_infor = array(
+                        "username" => $username,
+                        "password" => Hash::make($password),
+                        "created_at" => date('Y-m-d h:i:s'),
+                        "avatar" => $filename
+                    );
+                    $user_id = User::getInstance()->insert($user_infor);
+
+                    if ($user_id) {
+                        return response()->json(array("message" => "Register Success!", "error" => 0));
+                    }
+                } catch (\Exception $e) {
+                    return response()->json(array("message" => $e->getMessage(), "error" => 1));
                 }
-                $user_infor = array(
-                    "username"=> $username,
-                    "password"=>Hash::make($password),
-                    "created_at"=>date('Y-m-d h:i:s'),
-                    "avatar"     =>$filename
-                );
-                $user_id = User::getInstance()->insert($user_infor);
-                if($user_id){
-                    return response()->json(array("message"=>"Register Success!","error"=>0));
-                }
-            }catch (\Exception $e){
-                return response()->json(array("message"=>$e->getMessage(),"error"=>1));
-            }
+            }else return view('user.register');
         }
     }

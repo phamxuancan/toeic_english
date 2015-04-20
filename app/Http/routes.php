@@ -35,6 +35,7 @@ Route::get('/users/testsignup',function(){
 
 });
 Route::get('/users/home','UserController@index');
+Route::get('/users/signup', 'UserController@signup');
 Route::post('/users/signup', 'UserController@signup');
 $router->group(['middleware' => 'auth'],function(){
 
