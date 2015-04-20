@@ -7,6 +7,7 @@
  */
     namespace App\Http\Controllers;
     use App\Http\Controllers;
+    use App\Models\File;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Hash;
@@ -14,13 +15,13 @@
 
     class UserController extends Controller{
         public function index(){
-			
-            if(Auth::check()){
-
-                echo "da login";
-            }else{
-                echo "Chua login";
-            }
+            return view('users.index');
+        }
+        public function authentications(){
+                if(Auth::check()){
+                    return redirect()->to('users');
+                }
+                return view('user.login');
         }
         public function authentication(Request $request){
             if($request->isMethod('post')){
@@ -64,5 +65,9 @@
                     return response()->json(array("message" => $e->getMessage(), "error" => 1));
                 }
             }else return view('user.register');
+        }
+        public function logout(){
+            Auth::logout();
+            return view('user.login');
         }
     }
