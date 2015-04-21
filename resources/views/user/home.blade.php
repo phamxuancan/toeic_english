@@ -14,107 +14,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <p>
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
-                      </div>
-
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
-                      </div>
-
-
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
-                      </div>
-
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
-                      </div>
-
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
-                      </div>
+                    <p class="content_read">
 
                     </p>
                   </td>
@@ -133,105 +33,43 @@
                     <p>
                       <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
                       <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
+                          <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            A. Đây là phương án A
+                          </label><br/>
+                          <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            B. Đây là phương án B
+                          </label><br/>
+                          <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            C. Đây là phương án C
+                          </label><br/>
+                          <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            D. Đây là phương án D
+                          </label>
                       </div>
 
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
+                      <b>Câu 2: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
+                          <div class="radio">
+                            <label>
+                              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                              A. Đây là phương án A
+                            </label><br/>
+                            <label>
+                              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                              B. Đây là phương án B
+                            </label><br/>
+                            <label>
+                              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                              C. Đây là phương án C
+                            </label><br/>
+                            <label>
+                              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                              D. Đây là phương án D
+                            </label>
                       </div>
-
-
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
-                      </div>
-
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
-                      </div>
-
-                      <b>Câu 1: Day la noi dung của cau hỏi thứ nhât, bạn hãy chọn đáp án đúng theo các đáp án dưới đây, chỉ có 1 đáp án là đúng. Nếu bạn không chọn thì không được tính điẻm</b>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          A. Đây là phương án A
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          B. Đây là phương án B
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          C. Đây là phương án C
-                        </label><br/>
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                          D. Đây là phương án D
-                        </label>
-                      </div>
-
                     </p>
                   </td>
                 </tr>
@@ -257,6 +95,42 @@
                 $("#notification").hide();
                 $('#question').show();
                 $('.finish').show();
+
+                var url = home+"questions";
+
+                $.get(url,function(result,status,jxhr){
+                    var request = result.questions;
+                    console.log(request);
+                    var data = "";
+                    for(i = 0 ; i< request.length; i++){
+                        data = data + "<b>"+ request[i].question +"</b>";
+                        data = data + "<div class='radio'>";
+
+                        // đáp án A
+                        data = data + "<label>";
+                        data = data + "<input type='radio' name='optionsRadios"+i+"' id='optionsRadios"+ i +"' value='"+request[i].answer_a+"' >";
+                        data = data + request[i].answer_a +"</label><br/>";
+
+                        // đáp án B
+                        data = data + "<label>";
+                        data = data + "<input type='radio' name='optionsRadios"+i+"' id='optionsRadios"+ i +"' value='"+request[i].answer_b+"' >";
+                        data = data + request[i].answer_b +"</label><br/>";
+
+                        // đáp án C
+                        data = data + "<label>";
+                        data = data + "<input type='radio' name='optionsRadios"+i+"' id='optionsRadios"+ i +"' value='"+request[i].answer_c+"' >";
+                        data = data + request[i].answer_c +"</label><br/>";
+
+                        // đáp án D
+                        data = data + "<label>";
+                        data = data + "<input type='radio' name='optionsRadios"+i+"' id='optionsRadios"+ i +"' value='"+request[i].answer_d+"' >";
+                        data = data + request[i].answer_d +"</label>";
+
+                        data = data + "</div>";
+                    }
+
+                    $("#question .content_read").html(data);
+                });
             });
         });
     </script>

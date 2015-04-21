@@ -71,6 +71,6 @@
         }
         public function logout(){
             Auth::logout();
-            return view('user.login');
+            return redirect()->to('users');
         }
     }
