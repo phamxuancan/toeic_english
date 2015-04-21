@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Hash;
 
 Route::get('/', 'UserController@index');
 Route::get('/home', 'HomeController@index');
-
 Route::get('/users/login', 'UserController@login');
 Route::post('/users/authentication', 'UserController@authentication');
 Route::get('/users/home','UserController@index');
@@ -29,3 +28,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+// admin
+Route::get('/admins/login', 'AdminController@login');
+Route::post('/admins/confirm', 'AdminController@confirm');
+
