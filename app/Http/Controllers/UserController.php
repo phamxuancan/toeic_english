@@ -61,7 +61,8 @@
                     $user_id = User::getInstance()->insert($user_infor);
 
                     if ($user_id) {
-                        return response()->json(array("message" => "Register Success!", "error" => 0));
+                        Auth::attempt($request->all());
+                        return redirect()->to('/');
                     }
                 } catch (\Exception $e) {
                     return response()->json(array("message" => $e->getMessage(), "error" => 1));
@@ -70,6 +71,6 @@
         }
         public function logout(){
             Auth::logout();
-            return view('user.login');
+            return redirect()->to('users');
         }
     }
