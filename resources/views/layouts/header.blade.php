@@ -1,6 +1,5 @@
+<div style="background: greenyellow; width: 100%;height: 50px;  position: fixed; left: 0px; display: inline-block; overflow: hidden; z-index: 9;"></div>
 <div id="header" class="row">
-    {{--<div class="col-md-12"><h1><a href="/">Logo</a></h1></div>--}}
-
     <div id="slider1_container" style=" position: relative; margin: 0 auto; width: 400px; height: 60px; overflow: hidden;">
         <div u="slides" class="col-lg-12" style="cursor: move; position: absolute; left: 0px; top: 0px; height: 60px;
         overflow: hidden;">
