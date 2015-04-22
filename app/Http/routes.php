@@ -20,6 +20,9 @@ Route::get('/users/signup', 'UserController@signup');
 Route::post('/users/signup', 'UserController@signup');
 Route::post('/questions/createQuestion','QuestionController@createQuestion');
 Route::get('/questions','QuestionController@getAllQuestions');
+
+Route::post('/point/add','PointController@add');
+
 $router->group(['middleware' => 'auth'],function(){
     Route::get('/users','UserController@index');
     Route::get('/users/logout','UserController@logout');
