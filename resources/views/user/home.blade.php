@@ -40,10 +40,14 @@
         var seconds = 0;
         var minus = 90;
         var funTime;
+
+        var user_id = 0;
+
         $('document').ready(function(){
             $('#question').hide();
             $('.finish').hide();
             $("#countTime").hide();
+            user_id = "<?php echo Auth::user()['id']; ?>";
 
             $('#user_home_begin').click(function(){
                 $("#notification").hide();
