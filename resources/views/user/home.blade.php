@@ -58,7 +58,7 @@
                 var url = home+"questions";
 
                 $.get(url,function(result,status,jxhr){
-                    var request = result.questions;
+                    var request = result.text;
                     console.log(request);
                     var data = "";
                     socauhoi = request.length;
