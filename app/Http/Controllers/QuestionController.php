@@ -11,6 +11,8 @@ use App\Models\Question;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller{
+    const TYPE_AUDIO = 'audio';
+    const TYPE_TEXT  = 'text';
         public function createQuestion(Request $request){
             try{
                 $question       = $request->get('question','');
@@ -20,6 +22,7 @@ class QuestionController extends Controller{
                 $answer_d       = $request->get('answer_d');
                 $answer_correct = $request->get('answer_correct');
                 $sound          = $request->get('sound','');
+                $type          = $request->get('type','');
                 $input = array(
                     "question"      => $question,
                     "answer_a"      => $answer_a,
@@ -28,6 +31,7 @@ class QuestionController extends Controller{
                     "answer_d"      => $answer_d,
                     "answer_correct"=> $answer_correct,
                     "sound"         => $sound,
+                    "type"          => $type,
                     "created_at"    => date('Y-m-d h:i:s')
 
                 );
@@ -43,11 +47,9 @@ class QuestionController extends Controller{
         public function getAllQuestions(){
             try{
                 $questions = array();
-                $result     =   Question::getInstance()->getAllObjectInTable();
-                if(count($result)){
-                    $questions = $result;
-                }
-                return array("questions"=>$questions);
+                $audio     =   Question::getInstance()->getObjectsWheres(array('type'=>self::TYPE_AUDIO));
+                $text     =   Question::getInstance()->getObjectsWheres(array('type'=>self::TYPE_TEXT));
+                return array("audio"=>$audio,'text'=>$text);
             }catch (\Exception $e){
                 return response()->json(array("message"=>$e->getMessage(),"error"=>1));
             }
