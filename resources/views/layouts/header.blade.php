@@ -1,6 +1,10 @@
 <div id="countTime" style="background: greenyellow; width: 100%;height: 50px;  position: fixed; left: 0px; display: inline-block; overflow: hidden; z-index: 9;">
-<h3 style="float: left;">Time:</h3>
-<form name="counter"><input type="text" size="8" name="d2" readonly ='readonly'></form>
+
+    <form name="counter" style="margin-left: 60px; margin-top: 10px;">
+        <label>Thời gian còn lại:</label>
+        <input type="text" size="15" name="d2" readonly ='readonly'>
+    </form>
+
 </div>
 
 <div id="header" class="row">

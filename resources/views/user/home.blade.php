@@ -42,7 +42,7 @@
                 $("#notification").hide();
                 $('#question').show();
                 $('.finish').show();
-
+                $('#user_home_begin').hide();
                 var url = home+"questions";
 
                 $.get(url,function(result,status,jxhr){
@@ -83,24 +83,28 @@
             });
         });
 
-        var milisec=0 ;
-        var seconds= 120*60 ;
-        document.counter.d2.value= seconds;
+        var seconds = 1 ;
+        var minus = 120;
+        document.counter.d2.value= minus+':'+seconds;
         function showCountTimer(){
-            if (milisec<=0){
-                milisec=9 ;
-                seconds-=1 ;
-             }
-             if (seconds<=-1){
-                milisec=0 ;
-                seconds+=1 ;
-            	window.location.href = "http://toeic.local.com/";
-             }
-             else
-                milisec-=1 ;
+            if(minus==0 && seconds == 0){
+                document.counter.d2.value= 'hết giờ';
+            }else{
+                if (seconds<=0){
+                    seconds=60 ;
+                    minus-=1 ;
+                 }
+                 if (seconds<=-1){
+                    seconds=0 ;
+                    minus+=1 ;
+                    window.location.href = "http://toeic.local.com/";
+                 }
+                 else
+                    seconds-=1 ;
 
-            document.counter.d2.value=seconds ;
-            setTimeout("showCountTimer()",100) ;
+                document.counter.d2.value= minus+' phút : '+seconds+' giây';
+                setTimeout("showCountTimer()",1000) ;
+            }
         }
     </script>
 @endsection
