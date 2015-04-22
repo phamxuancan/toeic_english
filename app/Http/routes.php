@@ -22,7 +22,7 @@ Route::post('/questions/createQuestion','QuestionController@createQuestion');
 Route::get('/questions','QuestionController@getAllQuestions');
 
 Route::post('/point/add','PointController@add');
-Route::get('/point','PointController@getMaxPoint');
+Route::get('/top','PointController@getMaxPoint');
 
 $router->group(['middleware' => 'auth'],function(){
     Route::get('/users','UserController@index');
