@@ -21,8 +21,8 @@ use App\Models\ModelBase;
         }
 
         public function getMaxPoint(){
-//            $sql  = "SELECT * FROM $this->table_name group by user_id HAVING point = (SELECT point ) ORDER BY id DESC";
-//            $data = DBconnect::connection()->select($sql);
-//            return $data;
+            $sql  = "SELECT * FROM $this->table_name ORDER BY id DESC";
+            $data = DBconnect::connection()->select($sql);
+            return $data;
         }
     }
