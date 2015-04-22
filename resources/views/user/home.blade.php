@@ -37,6 +37,9 @@
         var ketqua = new Array();
         var arrayResult = new Array();
         var socauhoi = 0;
+        var seconds = 0;
+        var minus = 90;
+        var funTime;
         $('document').ready(function(){
             $('#question').hide();
             $('.finish').hide();
@@ -88,39 +91,6 @@
                 });
             });
         });
-        //$( this ).css( "color", "red" );
-        //click finish button
-        $("#buttonFinish").click(function () {
-            processResult();
-            disRadio();
-            showColor(ketqua);
-        });
-
-        //xử lý time
-        var seconds = 1 ;
-        var minus = 120;
-        document.counter.d2.value= minus+':'+seconds;
-        function showCountTimer(){
-            if(minus==0 && seconds == 0){
-                document.counter.d2.value= 'hết giờ';
-            }else{
-                if (seconds<=0){
-                    seconds=60 ;
-                    minus-=1 ;
-                 }
-                 if (seconds<=-1){
-                    seconds=0 ;
-                    minus+=1 ;
-                    window.location.href = "http://toeic.local.com/";
-                 }
-                 else
-                    seconds-=1 ;
-
-                document.counter.d2.value= minus+' phút : '+seconds+' giây';
-                setTimeout("showCountTimer()",1000) ;
-            }
-        }
-        //chấm điểm
         
         function processResult(){
             var score = 0;
@@ -147,6 +117,43 @@
             }
             
         }
+        function finishTest(){
+
+            processResult();
+            disRadio();
+            showColor(ketqua);
+        }
+
+        $("#buttonFinish").click(function () {
+            finishTest();
+            clearTimeout(funTime);
+        });
+
+        //xử lý time
+        
+        document.counter.d2.value= minus+':'+seconds;
+        function showCountTimer(){
+            if(minus==0 && seconds == 0){
+                document.counter.d2.value= 'hết giờ';
+                finishTest();
+            }else{
+                if (seconds<=0){
+                    seconds=60 ;
+                    minus-=1 ;
+                 }
+                 if (seconds<=-1){
+                    seconds=0 ;
+                    minus+=1 ;
+                    window.location.href = "http://toeic.local.com/";
+                 }
+                 else
+                    seconds-=1 ;
+
+                document.counter.d2.value= minus+' phút : '+seconds+' giây';
+                funTime = setTimeout("showCountTimer()",1000);
+            }
+        }
+
 
     </script>
 @endsection
