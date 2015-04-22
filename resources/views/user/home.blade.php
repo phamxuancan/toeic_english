@@ -36,6 +36,7 @@
         $('document').ready(function(){
             $('#question').hide();
             $('.finish').hide();
+            $("#countTime").hide();
 
             $('#user_home_begin').click(function(){
                 $("#notification").hide();
@@ -75,9 +76,31 @@
                         data = data + "</div>";
                     }
 
+                    $("#countTime").show();
+                    showCountTimer();
                     $("#question .content_read").html(data);
                 });
             });
         });
+
+        var milisec=0 ;
+        var seconds= 120*60 ;
+        document.counter.d2.value= seconds;
+        function showCountTimer(){
+            if (milisec<=0){
+                milisec=9 ;
+                seconds-=1 ;
+             }
+             if (seconds<=-1){
+                milisec=0 ;
+                seconds+=1 ;
+            	window.location.href = "http://toeic.local.com/";
+             }
+             else
+                milisec-=1 ;
+
+            document.counter.d2.value=seconds ;
+            setTimeout("showCountTimer()",100) ;
+        }
     </script>
 @endsection
