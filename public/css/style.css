@@ -26,4 +26,5 @@
 .navbar{margin-left: 65px;}
 .table{width: 100%;max-width: 95%; margin-bottom: 20px;   margin-left: 30px;}
 .finish{margin-top: 10px;}
-.footer{background-color: blue; margin-left: 50px; margin-right: 50px;}
+.footer{background-color: blue; margin-left: 50px!important; margin-right: 50px!important;}
+#content{margin-top: 23px;}
