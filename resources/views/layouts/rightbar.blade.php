@@ -11,7 +11,7 @@
         var top = "";
         $.get( "http://toeic.local.com/top", function( data ) {
             for( i = 0 ; i < data.points.length ; i++ ){
-                top = top + "<li>" + data.points[1].username + "</li>";
+                top = top + "<li>" + data.points[i].username +" - "+ data.points[i].point +" điểm"+"</li>";
             }
             $('#topuser').html(top);
         });
