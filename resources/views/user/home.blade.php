@@ -2,7 +2,7 @@
 @section('content')
     <center><input type="button" value="bắt đầu" id="user_home_begin" /></center>
 
-    <div style="border: 1px red solid;margin-left: 50px; margin-top: 10px; -webkit-border-radius: 20px;">
+    <div style="border: 1px red solid; margin-left: 50px; margin-top: 10px; -webkit-border-radius: 20px;">
         <div id="notification">
             <center> nội dung thông báo, nếu click nội dung hide và show đề thi </center>
         </div>
@@ -37,16 +37,24 @@
         var ketqua = new Array();
         var arrayResult = new Array();
         var socauhoi = 0;
-        var seconds = 0;
+        var seconds = 1;
         var minus = 90;
         var funTime;
 
         var user_id = 0;
 
         $('document').ready(function(){
+            var top = "";
+            $.get( "http://toeic.local.com/top", function( data ) {
+                for( i = 0 ; i < data.points.length ; i++ ){
+                    top = top + "<li>" + data.points[1].username + "</li>";
+                }
+                $('#topuser').html(top);
+            });
+
             $('#question').hide();
             $('.finish').hide();
-            $("#countTime").hide();
+            // $("#countTime").hide();
             user_id = "<?php echo Auth::user()['id']; ?>";
 
             $('#user_home_begin').click(function(){
@@ -54,6 +62,7 @@
                 $('#question').show();
                 $('.finish').show();
                 $('#user_home_begin').hide();
+
                 var url = home+"questions";
 
                 $.get(url,function(result,status,jxhr){
@@ -89,7 +98,7 @@
                         ketqua[i+1] = (i+1)+request[i].answer_correct;
                     }
 
-                    $("#countTime").show();
+                    $("#countTime").css('visibility', '');
                     showCountTimer();
                     $("#question .content_read").html(data);
                 });

@@ -6,17 +6,18 @@
  * Time: 5:28 PM
  */
  ?>
+<script type="text/javascript">
+    $('document').ready(function(){
+        var top = "";
+        $.get( "http://toeic.local.com/top", function( data ) {
+            for( i = 0 ; i < data.points.length ; i++ ){
+                top = top + "<li>" + data.points[1].username + "</li>";
+            }
+            $('#topuser').html(top);
+        });
+    });
+</script>
 
 <h2>Top 10:</h2>
-<ol>
-    <li>Tran Quyet Thang1</li>
-    <li>Tran Quyet Thang2</li>
-    <li>Tran Quyet Thang3</li>
-    <li>Tran Quyet Thang4</li>
-    <li>Tran Quyet Thang5</li>
-    <li>Tran Quyet Thang6</li>
-    <li>Tran Quyet Thang7</li>
-    <li>Tran Quyet Thang8</li>
-    <li>Tran Quyet Thang9</li>
-    <li>Tran Quyet Thang10</li>
+<ol id="topuser">
 </ol>
