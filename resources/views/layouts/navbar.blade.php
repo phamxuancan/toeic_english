@@ -11,9 +11,11 @@
     <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">
             @if(!Auth::check())
+                <li><a href="/">Trang chủ</a></li>
                 <li><a href="/users/login">Đăng nhập</a></li>
                 <li><a href="/users/signup">Đăng ký</a></li>
             @else
+                <li><a href="/">Trang chủ</a></li>
                 <li><a href="/users/info">{{Auth::user()['username']}}</a></li>
                 <li><a href="/users/logout">Logout</a></li>
             @endif
