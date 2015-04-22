@@ -131,7 +131,7 @@
                 }
 
             })
-            alert("điểm số:"score);
+            alert("điểm số:"+score);
         }
 
         //disable radio button
