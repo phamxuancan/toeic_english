@@ -78,7 +78,7 @@
                         data = data + "<input type='radio' name='optionsRadios"+(i+1)+"' class='rad' id='optionsRadios"+ (i+1) +"' value='"+(i+1)+"d."+request[i].answer_d+"' >";
                         data = data + "D. " + request[i].answer_d +"</label>";
 
-                        data = data + "</div>" + socauhoi;
+                        data = data + "</div>";
                         ketqua[i+1] = (i+1)+request[i].answer_correct;
                     }
 
