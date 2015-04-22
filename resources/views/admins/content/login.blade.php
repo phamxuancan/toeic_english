@@ -26,7 +26,6 @@
     $(document).ready(function(){
          $('#btn_login').on('click',function(){
             var form = $('#admin_login')[0];
-            console.log(form);
             formData = new FormData(form);
                 $.ajax({
                     url:"/admins/confirm",
@@ -38,16 +37,17 @@
                         $('#btn_login').button('loading');
                     },
                     success:function(result){
+                    console.log(result);
                          if(result.error == 0){
-                            window.location.href = 'http://google.com';
+                            window.location.href = '/admins';
                          }else{
                             $('#error').show();
                             $('#error').html(result.message);
                          }
-
                     },
                     error:function(result){
-
+                     $('#error').show();
+                     $('#error').html(result.responseText);
                     }
                 })
          });

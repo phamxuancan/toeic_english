@@ -1,0 +1,1 @@
+@extends('admins.layouts.index')

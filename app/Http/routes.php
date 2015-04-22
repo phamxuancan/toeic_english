@@ -29,6 +29,10 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 // admin
+Route::get('/admins', 'AdminController@index');
 Route::get('/admins/login', 'AdminController@login');
 Route::post('/admins/confirm', 'AdminController@confirm');
+
+//get infor php current
+Route::get('/phpinfor', 'AdminController@phpinfor');
 
