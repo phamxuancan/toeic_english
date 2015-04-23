@@ -1,4 +1,5 @@
     @extends('admins.layouts.index')
+     <script src="<?php echo URL::to('/') ?>/js/admin/Questions.js"></script>
     @section('content')
         <nav class="navbar navbar-default navbar-inverse">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -30,12 +31,28 @@
               </div>
               <div class="modal-body">
                     <form id="admin_addQuestion" action="#" class="form-horizontal" method="POST" enctype="multipart/form-data" role="form">
-                            <div class="form-group">
+                              <div class="form-group">
+                                    <label for="question" class="control-label col-lg-3 col-md-3  ">Loai câu hỏi :</label>
+                                    <div class="col-lg-9 col-md-9" >
+                                        <select id="type_question" name="type" class="col-lg-4 col-md-4 btn btn-sm btn-small btn-success">
+                                             <option value="text" class="btn btn-sm btn-small btn-success">text</option>
+                                             <option value="audio" class="btn btn-sm btn-small btn-success">audio</option>
+                                       </select>
+                                    </div>
+                              </div>
+                            <div class="form-group" id="text_question">
                                 <label for="question" class="control-label col-lg-3 col-md-3  ">Câu hỏi :</label>
                                 <div class="col-lg-9 col-md-9" >
                                     <input type="text" class="form-control" name="question" id="question" placeholder="Nhập câu hỏi ....">
                                 </div>
                             </div>
+                            <div class="form-group" id="audio_question" style="display: none;">
+                                <label for="sound" class="control-label col-lg-3 col-md-3  ">Audio :</label>
+                                <div class="col-lg-9 col-md-9" >
+                                    <input type="file" class="form-control" name="sound" id="sound">
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label for="answer_a" class="control-label col-lg-3 col-md-3 ">Đáp án A :</label>
                                 <div class="col-lg-9 col-md-9">
@@ -63,7 +80,7 @@
                             <div class="form-group">
                                 <label for="answer_correct" class="control-label col-lg-3 col-md-3 ">Đáp án đúng :</label>
                                 <div class="col-lg-9 col-md-9">
-                                   <select id="answer_correct" class="col-lg-2 col-md-2 btn btn-sm btn-small btn-success">
+                                   <select id="answer_correct" name="answer_correct" class="col-lg-2 col-md-2 btn btn-sm btn-small btn-success">
                                          <option value="A" class="btn btn-sm btn-small btn-success">A</option>
                                          <option value="B" class="btn btn-sm btn-small btn-success">B</option>
                                          <option value="C" class="btn btn-sm btn-small btn-success">C</option>
@@ -80,4 +97,19 @@
             </div>
           </div>
         </div>
+          <script type="text/javascript">
+            $(document).ready(function(){
+                $('#type_question').on('change', function(){
+                    var value = $('#type_question').val();
+                    if(value == 'text'){
+                        $('#text_question').show();
+                        $('#audio_question').hide();
+                    }else{
+                        $('#text_question').hide();
+                        $('#audio_question').show();
+                    }
+                });
+            });
+
+            </script>
     @endsection

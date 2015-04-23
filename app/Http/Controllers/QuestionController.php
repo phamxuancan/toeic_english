@@ -7,6 +7,7 @@
  */
 namespace App\Http\Controllers;
 use App\Http\Controllers;
+use App\Models\File;
 use App\Models\Question;
 use Illuminate\Http\Request;
 
@@ -21,8 +22,12 @@ class QuestionController extends Controller{
                 $answer_c       = $request->get('answer_c');
                 $answer_d       = $request->get('answer_d');
                 $answer_correct = $request->get('answer_correct');
-                $sound          = $request->get('sound','');
-                $type          = $request->get('type','');
+                $sound          = '';
+                $type          = $request->get('type','text');
+                if($request->hasFile('sound')){
+                    $file = $request->file('sound');
+                    $sound = File::uploadFile($file,'uploads/audio');
+                }
                 $input = array(
                     "question"      => $question,
                     "answer_a"      => $answer_a,
