@@ -8,6 +8,7 @@
     namespace App\Http\Controllers;
     use App\Http\Controllers;
     use App\Models\Point;
+    use App\User;
     use Illuminate\Http\Request;
 
     class PointController extends Controller{
@@ -16,7 +17,18 @@
                 $points = array();
                 $result     =   Point::getInstance()->getMaxPoint();
                 if(count($result)){
-                    $points = $result;
+
+                    foreach($result as $point){
+                        $user_id = $point->user_id;
+                        try{
+                            $user = User::find($user_id);
+                            $point->username = $user->username;
+                            array_push($points,$point);
+                        }catch (\Exception $e){
+                            continue;
+                        }
+
+                    }
                 }
                 return array("points"=>$points);
             }catch (\Exception $e){

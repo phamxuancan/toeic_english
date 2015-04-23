@@ -35,4 +35,15 @@
             $data = DBconnect::connection()->select($sql);
             return $data;
         }
+        public function getObjectsWheres($values){
+            if(count($values) > 0){
+                foreach($values as $key => $value){
+                    $array[] = $key.'='."'$value'";
+                }
+                $condition = implode(' AND ',$array);
+                $sql = "SELECT * FROM $this->table_name WHERE $condition";
+                $data = DBconnect::connection()->select($sql);
+                return $data;
+            }
+        }
     }
