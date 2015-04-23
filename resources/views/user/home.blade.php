@@ -21,6 +21,21 @@
                 </tr>
               </tbody>
             </table>
+
+            <table class="table">
+              <thead>
+                <tr><td><h2>Phần Nghe</h2></td></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p class="content_listen">
+
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
         </div>
     </div>
     <!-- button finish -->
@@ -40,6 +55,7 @@
         var seconds = 1;
         var minus = 90;
         var funTime;
+        var score;
 
         var user_id = 0;
 
@@ -58,47 +74,80 @@
                 var url = home+"questions";
 
                 $.get(url,function(result,status,jxhr){
-                    var request = result.questions;
-                    console.log(request);
+                    var request = result.text;
                     var data = "";
-                    socauhoi = request.length;
                     for(i = 0 ; i< request.length; i++){
-                        data = data + "<b> Câu "+ (i+1) +": "+ request[i].question +"</b>";
+                        socauhoi++;
+                        data = data + "<b> Câu "+ socauhoi +": "+ request[i].question +"</b>";
                         data = data + "<div class='radio'>";
 
                         // đáp án A
-                        data = data + "<label id='"+(i+1)+"a"+"'>";
-                        data = data + "<input type='radio' name='optionsRadios"+(i+1)+"' class='rad' id='optionsRadios"+ (i+1) +"' value='"+(i+1)+"a."+request[i].answer_a+"' >";
+                        data = data + "<label id='"+socauhoi+"a"+"'>";
+                        data = data + "<input type='radio' name='optionsRadios"+socauhoi+"' class='rad' id='optionsRadios"+ socauhoi +"' value='"+ socauhoi +"a."+request[i].answer_a+"' >";
                         data = data + "A. " + request[i].answer_a +"</label><br/>";
 
                         // đáp án B
-                        data = data + "<label  id='"+(i+1)+"b"+"'>";
-                        data = data + "<input type='radio' name='optionsRadios"+(i+1)+"' class='rad' id='optionsRadios"+ (i+1) +"' value='"+(i+1)+"b."+request[i].answer_b+"' >";
+                        data = data + "<label  id='"+socauhoi+"b"+"'>";
+                        data = data + "<input type='radio' name='optionsRadios"+socauhoi+"' class='rad' id='optionsRadios"+ socauhoi +"' value='"+ socauhoi +"b."+request[i].answer_b+"' >";
                         data = data + "B. " + request[i].answer_b +"</label><br/>";
 
                         // đáp án C
-                        data = data + "<label  id='"+(i+1)+"c"+"'>";
-                        data = data + "<input type='radio' name='optionsRadios"+(i+1)+"' class='rad' id='optionsRadios"+ (i+1) +"' value='"+(i+1)+"c."+request[i].answer_c+"' >";
+                        data = data + "<label  id='"+socauhoi+"c"+"'>";
+                        data = data + "<input type='radio' name='optionsRadios"+socauhoi+"' class='rad' id='optionsRadios"+ socauhoi +"' value='"+ socauhoi +"c."+request[i].answer_c+"' >";
                         data = data + "C. " + request[i].answer_c +"</label><br/>";
 
                         // đáp án D
-                        data = data + "<label  id='"+(i+1)+"d"+"'>";
-                        data = data + "<input type='radio' name='optionsRadios"+(i+1)+"' class='rad' id='optionsRadios"+ (i+1) +"' value='"+(i+1)+"d."+request[i].answer_d+"' >";
+                        data = data + "<label  id='"+socauhoi+"d"+"'>";
+                        data = data + "<input type='radio' name='optionsRadios"+socauhoi+"' class='rad' id='optionsRadios"+ socauhoi +"' value='"+ socauhoi +"d."+request[i].answer_d+"' >";
                         data = data + "D. " + request[i].answer_d +"</label>";
 
                         data = data + "</div>";
-                        ketqua[i+1] = (i+1)+request[i].answer_correct;
+                        ketqua[socauhoi] = (socauhoi)+request[i].answer_correct;
+                    }
+
+                    request = result.audio;
+                    console.log(request);
+                    var data2 = "";
+                    for(i = 0 ; i< request.length; i++){
+                        socauhoi++;
+                        data2 = data2 + "<b> Câu "+ socauhoi +": "+ request[i].question +"</b></br>";
+                        data2 = data2 + "<audio controls><source src='"+request[i].sound+"' type='audio/mpeg'>" +"</source></audio>";
+                        data2 = data2 + "<div class='radio'>";
+
+                        // đáp án A
+                        data2 = data2 + "<label id='"+socauhoi+"a"+"'>";
+                        data2 = data2 + "<input type='radio' name='optionsRadios"+socauhoi+"' class='rad' id='optionsRadios"+ socauhoi +"' value='"+socauhoi+"a."+request[i].answer_a+"' >";
+                        data2 = data2 + "A. " + request[i].answer_a +"</label><br/>";
+
+                        // đáp án B
+                        data2 = data2 + "<label  id='"+socauhoi+"b"+"'>";
+                        data2 = data2 + "<input type='radio' name='optionsRadios"+socauhoi+"' class='rad' id='optionsRadios"+ socauhoi +"' value='"+socauhoi+"b."+request[i].answer_b+"' >";
+                        data2 = data2 + "B. " + request[i].answer_b +"</label><br/>";
+
+                        // đáp án C
+                        data2 = data2 + "<label  id='"+socauhoi+"c"+"'>";
+                        data2 = data2 + "<input type='radio' name='optionsRadios"+socauhoi+"' class='rad' id='optionsRadios"+ socauhoi +"' value='"+socauhoi+"c."+request[i].answer_c+"' >";
+                        data2 = data2 + "C. " + request[i].answer_c +"</label><br/>";
+
+                        // đáp án D
+                        data2 = data2 + "<label  id='"+socauhoi+"d"+"'>";
+                        data2 = data2 + "<input type='radio' name='optionsRadios"+socauhoi+"' class='rad' id='optionsRadios"+ socauhoi +"' value='"+socauhoi+"d."+request[i].answer_d+"' >";
+                        data2 = data2 + "D. " + request[i].answer_d +"</label>";
+
+                        data2 = data2 + "</div>";
+                        ketqua[socauhoi] = (socauhoi)+request[i].answer_correct;
                     }
 
                     $("#countTime").css('visibility', '');
                     showCountTimer();
                     $("#question .content_read").html(data);
+                    $("#question .content_listen").html(data2);
                 });
             });
         });
         
         function processResult(){
-            var score = 0;
+            score = 0;
             $(".rad:checked").each(function() {
                 alert("Radio: " + $(this).val());
                 if(ketqua.lastIndexOf($(this).val().substr(0,2))!= -1){
@@ -123,10 +172,23 @@
             
         }
         function finishTest(){
-
             processResult();
             disRadio();
             showColor(ketqua);
+            if(user_id == 0){
+                
+            }else{
+                $.post( home+"point/add", {user_id: user_id, point: score , time: minus+""+seconds})
+                .done(function( data ) {
+                    if(data.error == 1){
+                        alert(data.message);
+                    }else{
+                        alert(data.message);
+                    }
+                    
+                });
+            }
+
         }
 
         $("#buttonFinish").click(function () {
