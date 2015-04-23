@@ -40,6 +40,7 @@
         var seconds = 0;
         var minus = 90;
         var funTime;
+        var score;
 
         var user_id = 0;
 
@@ -97,7 +98,7 @@
         });
         
         function processResult(){
-            var score = 0;
+            score = 0;
             $(".rad:checked").each(function() {
                 alert("Radio: " + $(this).val());
                 if(ketqua.lastIndexOf($(this).val().substr(0,2))!= -1){
@@ -122,10 +123,23 @@
             
         }
         function finishTest(){
-
             processResult();
             disRadio();
             showColor(ketqua);
+            if(user_id == 0){
+                
+            }else{
+                $.post( home+"point/add", {user_id: user_id, point: score , time: minus+""+seconds})
+                .done(function( data ) {
+                    if(data.error == 1){
+                        alert(data.message);
+                    }else{
+                        alert(data.message);
+                    }
+                    
+                });
+            }
+
         }
 
         $("#buttonFinish").click(function () {
