@@ -110,7 +110,7 @@
                     for(i = 0 ; i< request.length; i++){
                         socauhoi++;
                         data2 = data2 + "<b> Câu "+ socauhoi +": "+ request[i].question +"</b></br>";
-                        data2 = data2 + "<audio controls><source src='"+request[i].sound+"' type='audio/mpeg'>" +"</source></audio>";
+                        data2 = data2 + "<audio controls><source src='/uploads/audio/"+request[i].sound+"' type='audio/mpeg'>" +"</source></audio>";
                         data2 = data2 + "<div class='radio'>";
 
                         // đáp án A
