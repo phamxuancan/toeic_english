@@ -3,6 +3,8 @@
     <form name="counter" style="margin-left: 60px; margin-top: 10px;">
         <label>Thời gian còn lại:</label>
         <input type="text" size="15" name="d2" readonly ='readonly'>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label id="showSorce"></label>
     </form>
 
 </div>

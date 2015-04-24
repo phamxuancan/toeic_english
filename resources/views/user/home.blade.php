@@ -102,11 +102,10 @@
                         data = data + "D. " + request[i].answer_d +"</label>";
 
                         data = data + "</div>";
-                        ketqua[socauhoi] = (socauhoi)+request[i].answer_correct;
+                        ketqua[socauhoi] = (socauhoi)+request[i].answer_correct.toLowerCase();
                     }
 
                     request = result.audio;
-                    console.log(request);
                     var data2 = "";
                     for(i = 0 ; i< request.length; i++){
                         socauhoi++;
@@ -135,13 +134,14 @@
                         data2 = data2 + "D. " + request[i].answer_d +"</label>";
 
                         data2 = data2 + "</div>";
-                        ketqua[socauhoi] = (socauhoi)+request[i].answer_correct;
-                    }
 
-                    $("#countTime").css('visibility', '');
-                    showCountTimer();
+                        ketqua[socauhoi] = (socauhoi)+request[i].answer_correct.toLowerCase();
+                    }
+                                        
                     $("#question .content_read").html(data);
                     $("#question .content_listen").html(data2);
+                    $("#countTime").css('visibility', '');
+                    showCountTimer();
                 });
             });
         });
@@ -149,13 +149,11 @@
         function processResult(){
             score = 0;
             $(".rad:checked").each(function() {
-                alert("Radio: " + $(this).val());
                 if(ketqua.lastIndexOf($(this).val().substr(0,2))!= -1){
                     score++;
                 }
-
+                $('#showSorce').html("Điểm số của bạn: " + score);
             })
-            alert("điểm số:"+score);
         }
 
         //disable radio button
