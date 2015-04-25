@@ -46,4 +46,17 @@
                 return $data;
             }
         }
+        public function update($values,$wheres){
+            foreach($values as $key => $value){
+                $array[] = $key.'='."'$value'";
+            }
+            $datavalue = implode(',',$array);
+            foreach($wheres as $keyw => $where){
+                $pos[] = $keyw.'='."'$where'";
+            }
+            $datawheres = implode(' AND ', $pos);
+            $sql = "UPDATE $this->table_name SET $datavalue WHERE $datawheres";
+            $data = DBconnect::connection()->select($sql);
+            return $data;
+        }
     }

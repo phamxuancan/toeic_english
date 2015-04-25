@@ -31,6 +31,9 @@ namespace App\Http\Controllers;
             }else
                 return response()->json(array('message'=>'Đăng nhập không thành công!','error'=>1));
         }
+        public function user(){
+
+        }
         public function phpinfor(){
             return md5('adminadmin');
             return phpinfo();

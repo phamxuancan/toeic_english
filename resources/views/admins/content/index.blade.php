@@ -1,26 +1,51 @@
     @extends('admins.layouts.index')
-     <script src="<?php echo URL::to('/') ?>/js/admin/Questions.js"></script>
+    @section('scripts')
+
+    @endsection
     @section('content')
         <nav class="navbar navbar-default navbar-inverse">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav col-lg-3">
-                    <li style="width: 165px;">
+                <ul class="nav navbar-nav col-lg-12">
+                    <li style="width: 175px;">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý Câu hỏi<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" data-toggle="modal" data-target="#createQuestionForm"><b class="caret"></b>Thêm câu hỏi mới</a></li>
-                            <li><a href="#" onclick="question.listQuestionSound();">Câu hỏi âm thanh</a></li>
-                            <li><a href="#" onclick="question.listQuestionText();">Câu hỏi Text</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#createQuestionForm"><b class="fa fa-plus"></b>Thêm câu hỏi mới</a></li>
+                            <li><a href="#" onclick="Questions.listQuestion('audio');"><b class="fa fa-reply-all"></b>Câu hỏi âm thanh</a></li>
+                            <li><a href="#" onclick="Questions.listQuestion('text');"><b class="fa fa-file-text"></b>Câu hỏi Text</a></li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b>Quản lý người dùng</a>
                     </li>
                          <?php use Illuminate\Support\Facades\Session;
                          if(session::has('admin_user')){
 
-                            echo '<li><a href="logout" >Logout</a></li>';
+                            echo '<li><a href="logout" ><b class="fa fa-mail-reply"></b>Logout</a></li>';
 
                          } ?>
                 </ul>
             </div>
         </nav>
+        <div class="col-lg-12">
+            <div class="col-lg-9" id="admin_content">
+
+            </div>
+            <div class="col-lg-3">
+                 <div class="box box-solid box-primary">
+                        <div class="box-header">
+                            <h4 style="text-align: center;">Bảng xếp hạng</h4>
+                        </div>
+                        <div class="box-body">
+                            <div id="top_point">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                 </div>
+            </div>
+
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="createQuestionForm" tabindex="-1" role="dialog" aria-labelledby="createQuestionForm" aria-hidden="true">
           <div class="modal-dialog">

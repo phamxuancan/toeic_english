@@ -18,7 +18,7 @@ var Questions = {
             },
             success:function(result){
                 if(result.error == 0){
-                    that.loadQuestion(type);
+                    that.listQuestion(type);
                 }
             },
             error:function(result){
@@ -26,7 +26,52 @@ var Questions = {
             }
         })
     },
-    loadQuestion:function(type){
-        
+    listQuestion:function(type){
+        $.ajax({
+           url:'/questions/listQuestion',
+           data:{type:type},
+           type:'GET',
+            success:function(result){
+                    $('#admin_content').html(result);
+            },
+            error:function(result){
+
+            }
+        });
+    },
+    showEditQuestion:function(question_id){
+        $.ajax({
+            url:'/questions/getDataEditQuestion',
+            data:{question_id:question_id},
+            type:'GET',
+            success:function(result){
+                $('#editQuestionForm').modal('show');
+                $('#editQuestionForm').find('#edit_question_form').html(result);
+            },
+            error:function(result){
+
+            }
+        })
+    },
+    editQuestion:function(myself){
+        that = this;
+        var form = $('#form_edit')[0];
+        formData = new FormData(form);
+        $.ajax({
+            url:'/questions/editQuestion',
+            data:formData,
+            type:'POST',
+            contentType:false,
+            processData:false,
+            beforeSend:function(){
+                $(myself).button('loading');
+            },
+            success:function(result){
+
+            },
+            error:function(result){
+
+            }
+        })
     }
 }

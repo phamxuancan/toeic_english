@@ -5,9 +5,13 @@
         <meta charset="UTF-8" />
         <link href="<?php echo URL::to('/') ?>/bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="<?php echo URL::to('/') ?>/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+        <link href="<?php echo URL::to('/') ?>/css/adminlte.css" rel="stylesheet">
+        <link href="<?php echo URL::to('/') ?>/font-awesome/css/font-awesome.css" rel="stylesheet">
         <script src="<?php echo URL::to('/') ?>/bootstrap/js/jquery-1.11.2.min.js"></script>
         <script src="<?php echo URL::to('/') ?>/bootstrap/js/bootstrap.js"></script>
         <script src="<?php echo URL::to('/') ?>/bootstrap/js/user.js"></script>
+         <script src="<?php echo URL::to('/') ?>/js/admin/Questions.js"></script>
+         <script src="<?php echo URL::to('/') ?>/js/admin/User.js"></script>
         <script src="<?php echo URL::to('/') ?>/js/category.js"></script>
          <script type="text/javascript"src="<?php echo URL::to('/') ?>/js/jssor.slider.mini.js"></script>
             <script>

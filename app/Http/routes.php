@@ -20,6 +20,9 @@ Route::get('/users/signup', 'UserController@signup');
 Route::post('/users/signup', 'UserController@signup');
 Route::post('/questions/createQuestion','QuestionController@createQuestion');
 Route::get('/questions','QuestionController@getAllQuestions');
+Route::get('/questions/listQuestion','QuestionController@listQuestion');
+Route::get('/questions/getDataEditQuestion','QuestionController@getDataEditQuestion');
+Route::post('/questions/editQuestion','QuestionController@editQuestion');
 
 Route::post('/point/add','PointController@add');
 Route::get('/top','PointController@getMaxPoint');
@@ -36,6 +39,7 @@ Route::controllers([
 Route::get('/admins', 'AdminController@index');
 Route::get('/admins/login', 'AdminController@login');
 Route::post('/admins/confirm', 'AdminController@confirm');
+Route::get('/admins/user', 'AdminController@user');
 
 //get infor php current
 Route::get('/phpinfor', 'AdminController@phpinfor');
