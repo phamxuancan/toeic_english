@@ -9,10 +9,8 @@
             @include('layouts.header')
 
             <div id="content" class="row">
-
+                @include('layouts.navbar')
                 <div id="left" class="col-md-9">
-                    @include('layouts.navbar')
-
                     @yield('content')
                 </div>
 

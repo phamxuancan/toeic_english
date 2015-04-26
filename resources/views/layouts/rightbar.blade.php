@@ -18,6 +18,6 @@
     });
 </script>
 
-<h2>Top 10:</h2>
+<center><h3>Bảng xếp hạng</h3></center>
 <ol id="topuser">
 </ol>
