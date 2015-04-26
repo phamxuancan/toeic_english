@@ -183,7 +183,7 @@
                     }else{
                         alert(data.message);
                     }
-                    
+                    getTop();
                 });
             }
 
