@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
             <div class="col-lg-offset-5 col-lg-10 col-md-offset-5 col-md-10">
-                <button type="button" class="btn btn-default btn-primary btn-lg" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng nhập</button>
+                <button type="button" class="btn" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng nhập</button>
             </div>
         </div>
     </form>
@@ -37,15 +37,16 @@
                         $('#btn_login').button('loading');
                     },
                     success:function(result){
-                    console.log(result);
                          if(result.error == 0){
                             window.location.href = '/admins';
                          }else{
+                            $('#btn_login').button('reset');
                             $('#error').show();
                             $('#error').html(result.message);
                          }
                     },
                     error:function(result){
+                      $('#btn_login').button('reset');
                      $('#error').show();
                      $('#error').html(result.responseText);
                     }

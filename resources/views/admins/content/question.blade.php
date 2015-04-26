@@ -1,6 +1,3 @@
-<?php
-   // print_r($questions);exit;
-?>
 <div class="panel panel-default">
     <div class="panel-heading">{{$type}}</div>
           <div class="panel-body">
@@ -19,26 +16,31 @@
                        <tr >
                            <td style="text-align: center;" >{{$question->id}}</td>
                            @if($type == 'audio')
-                                <td style="text-align: center;"><span class="fa fa-play fa-2x" onclick="Questions.playAudio({{$question->sound}})"></span></td>
+                                <td style="text-align: center;">
+                                 <audio controls preload="none" style="width: 40px;">
+                                       <source src="<?php echo URL::to('/') ?>/uploads/audio/{{$question->sound}}" type="audio/mpeg">
+                                </audio>
+                                </td>
+
                            @endif
                            @if($type == 'text')
-                                <td style="text-align: center;">{{substr($question->question,0,10)}}...</td>
+                                <td style="text-align: center;">{{(strlen($question->question)>30)?substr($question->question,0,20).'...':$question->question}}</td>
                            @endif
-                           <td style="text-align: center;">{{substr($question->answer_a,0,10)}}...</td>
-                           <td style="text-align: center;">{{substr($question->answer_b,0,10)}}...</td>
-                           <td style="text-align: center;">{{substr($question->answer_c,0,10)}}...</td>
-                           <td style="text-align: center;">{{substr($question->answer_d,0,10)}}...</td>
-                           <td style="text-align: center;">{{substr($question->answer_correct,0,10)}}</td>
+                           <td style="text-align: center;">{{(strlen($question->answer_a)>30)?substr($question->answer_a,0,20).'...':$question->answer_a}}</td>
+                           <td style="text-align: center;">{{(strlen($question->answer_b)>30)?substr($question->answer_b,0,20).'...':$question->answer_b}}</td>
+                           <td style="text-align: center;">{{(strlen($question->answer_c)>30)?substr($question->answer_c,0,20).'...':$question->answer_c}}</td>
+                           <td style="text-align: center;">{{(strlen($question->answer_d)>30)?substr($question->answer_a,0,20).'...':$question->answer_d}}</td>
+                           <td style="text-align: center;">{{$question->answer_correct}}</td>
                            <td style="text-align: center;">
-                                <span class="btn btn-warning btn-sm" onclick="Questions.showEditQuestion({{$question->id}});" >Sửa</span>
-                                <span class="btn btn-danger btn-sm" onclick="Questions.deleteQuestion({{$question->id}})">Xóa</span>
+                                <span class="btn btn-warning btn-sm" onclick="Questions.showEditQuestion('{{$question->id}}');" >Sửa</span>
+                                <span class="btn btn-danger btn-sm" onclick="Questions.deleteQuestion(this,'{{$question->id}}')">Xóa</span>
                            </td>
                        </tr>
                    @endforeach
                </table>
           </div>
 </div>
-<div class="modal fade" id="editQuestionForm" tabindex="-1" role="dialog" aria-labelledby="editQuestionForm" aria-hidden="true">
+<div class="modal" id="editQuestionForm" tabindex="-1" role="dialog" aria-labelledby="editQuestionForm" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
