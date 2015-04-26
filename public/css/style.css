@@ -1,5 +1,5 @@
 #header{
-	height:200px;
+	/*height:200px;*/
 	border-radius: 4px;
 	/*background-color: blue;*/
 	/*border: 1px solid black;*/
@@ -9,7 +9,7 @@
 
 #right{
 	/*border: 1px solid black;*/
-    width: 23%;
+    width: 25%;
 }
 #right h3{
     background-color: #3c8dbc;
