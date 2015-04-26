@@ -1,7 +1,10 @@
     @extends('admins.layouts.index')
-    @section('scripts')
-
-    @endsection
+        <script src="<?php echo URL::to('/') ?>/bootstrap/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            User.init();
+        });
+    </script>
     @section('content')
         <nav class="navbar navbar-default navbar-inverse">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -16,11 +19,21 @@
                     </li>
                     <li>
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b>Quản lý người dùng</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#" data-toggle="modal" data-target="#createUserAdmin"><b class="fa fa-plus"></b>Thêm người dùng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b>Thống kê</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-file-text"></b>Người thi hôm nay</a></li>
+                            <li><a href="#" onclick="User.pointFrom(50,100);"><b class="fa fa-file-text"></b>Đạt điểm từ 50->100</a></li>
+                        </ul>
                     </li>
                          <?php use Illuminate\Support\Facades\Session;
                          if(session::has('admin_user')){
 
-                            echo '<li><a href="logout" ><b class="fa fa-mail-reply"></b>Logout</a></li>';
+                            echo '<li><a href="/admins/logout" ><b class="fa fa-mail-reply"></b>Logout</a></li>';
 
                          } ?>
                 </ul>
@@ -37,9 +50,7 @@
                         </div>
                         <div class="box-body">
                             <div id="top_point">
-                                <ul>
-
-                                </ul>
+                                <div id="top_user_admin"></div>
                             </div>
                         </div>
                  </div>
@@ -118,6 +129,59 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
                 <button type="button" class="btn btn-primary" data-text-loading="Đang thêm ..." onclick="Questions.addQuestion(this);">Đồng ý</button>
+              </div>
+            </div>
+          </div>
+        </div>
+         <!-- Add user admin -->
+         <div class="modal fade" id="createUserAdmin" tabindex="-1" role="dialog" aria-labelledby="createUserAdmin" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Thêm người dùng</h4>
+              </div>
+              <div class="modal-body">
+                    <form id="admin_adduser" action="#" class="form-horizontal" method="POST" enctype="multipart/form-data" role="form">
+                              <div class="form-group">
+                                    <label for="question" class="control-label col-lg-3 col-md-3  ">Quyền người dùng</label>
+                                    <div class="col-lg-9 col-md-9" >
+                                        <select id="type_question" name="permission" class="col-lg-4 col-md-4 btn btn-sm btn-small btn-success">
+                                             <option value="admin" class="btn btn-warning">Admin</option>
+                                             <option value="user" class="btn btn-success">User</option>
+                                       </select>
+                                    </div>
+                              </div>
+                            <div class="form-group">
+                                <label for="username" class="control-label col-lg-3 col-md-3  ">Tên đăng nhập</label>
+                                <div class="col-lg-9 col-md-9" >
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Nhập tên đăng nhập...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label col-lg-3 col-md-3  ">Email :</label>
+                                <div class="col-lg-9 col-md-9" >
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Nhập email ...">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="control-label col-lg-3 col-md-3 ">Mật khẩu</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <input type="text" class="form-control" name="password" id="password" placeholder="Nhập mật khẩu...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="avatar" class="control-label col-lg-3 col-md-3 ">Avatar</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <input type="file" class="form-control" name="avatar" id="avatar">
+                                </div>
+                            </div>
+                        </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary" data-text-loading="Đang thêm ..." onclick="User.addUser(this);">Đồng ý</button>
               </div>
             </div>
           </div>

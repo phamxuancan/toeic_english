@@ -42,27 +42,46 @@
         public function signup(Request $request){
             if($request->isMethod('post')) {
                 try {
+                    $permission = $request->get('permission','user');
                     $username = $request->get('username', '');
                     $password = $request->get('password', '');
                     $email = $request->get('email', '');
                     $filename = '';
+                    $user = User::getInstance()->getObjectsWheres(
+                        array('username'=> $username,
+                            'password'=> md5($password),
+                            'permission'    => $permission
+                        )
+                    );
+                    if(count($user) > 0){
+                        return response()->json(array("message" => 'Người dùng đã tồn tại!', "error" => 1));
+                    }
                     if ($request->hasFile('avatar')) {
                         $avatar = $request->file('avatar');
                         $extension = $avatar->getClientOriginalExtension();
                         $filename = time() . "_" . rand(0, 10000000) . "." . $extension;
                         $avatar->move('uploads/avatar/', $filename);
                     }
+                    if($permission == 'admin'){
+                        $encode_password = md5($password);
+                    }else{
+                        $encode_password = Hash::make($password);
+                    }
                     $user_infor = array(
                         "username" => $username,
-                        "password" => Hash::make($password),
+                        "password" => $encode_password,
+                        'email'    => $email,
                         "created_at" => date('Y-m-d h:i:s'),
-                        "avatar" => $filename
+                        "avatar" => $filename,
+                        'permission'=>$permission
                     );
                     $user_id = User::getInstance()->insert($user_infor);
 
-                    if ($user_id) {
+                    if ($user_id && $permission == 'user') {
                         Auth::attempt($request->all());
                         return redirect()->to('/');
+                    }elseif($user_id && $permission == 'admin'){
+                        return response()->json(array("message" =>'Add User success', "error" => 0));
                     }
                 } catch (\Exception $e) {
                     return response()->json(array("message" => $e->getMessage(), "error" => 1));

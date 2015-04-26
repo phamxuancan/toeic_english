@@ -19,10 +19,14 @@ var Questions = {
             success:function(result){
                 if(result.error == 0){
                     that.listQuestion(type);
+                    $('#admin_addQuestion')[0].reset();
+                    $('#createQuestionForm').modal('hide');
+                }else{
+                    $('#admin_content').html(result.message);
                 }
             },
             error:function(result){
-
+                console.log(result.responseText);
             }
         })
     },
@@ -35,7 +39,7 @@ var Questions = {
                     $('#admin_content').html(result);
             },
             error:function(result){
-
+                console.log(result.responseText);
             }
         });
     },
@@ -49,11 +53,11 @@ var Questions = {
                 $('#editQuestionForm').find('#edit_question_form').html(result);
             },
             error:function(result){
-
+                console.log(result.responseText);
             }
         })
     },
-    editQuestion:function(myself){
+    editQuestion:function(myself,type){
         that = this;
         var form = $('#form_edit')[0];
         formData = new FormData(form);
@@ -67,10 +71,27 @@ var Questions = {
                 $(myself).button('loading');
             },
             success:function(result){
-
+                $('#editQuestionForm').modal('hide');
+                that.listQuestion(type);
             },
             error:function(result){
-
+                console.log(result.responseText);
+            }
+        })
+    },
+    deleteQuestion:function(myself,question_id){
+        $.ajax({
+            url:'/admins/deleteQuestion',
+            data:{question_id:question_id},
+            type:'POST',
+            beforeSend:function(){
+                $(myself).button('loading');
+            },
+            success:function(result){
+                $(myself).parent().parent().remove();
+            },
+            error:function(result){
+                $('#top_user_admin').html(result.responseText);
             }
         })
     }

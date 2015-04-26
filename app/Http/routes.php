@@ -40,6 +40,11 @@ Route::get('/admins', 'AdminController@index');
 Route::get('/admins/login', 'AdminController@login');
 Route::post('/admins/confirm', 'AdminController@confirm');
 Route::get('/admins/user', 'AdminController@user');
+Route::get('/admins/topPoint', 'AdminController@topPoint');
+Route::post('/admins/deleteUser', 'AdminController@deleteUser');
+Route::post('/admins/deleteQuestion', 'AdminController@deleteQuestion');
+Route::get('/admins/logout', 'AdminController@logout');
+Route::get('/admins/userTestInday', 'AdminController@userTestInday');
 
 //get infor php current
 Route::get('/phpinfor', 'AdminController@phpinfor');

@@ -102,19 +102,19 @@
     <body>
             <!-- Jssor Slider Begin -->
             <div id="slider1_container" style=" position: relative; margin: 0 auto; width: 400px; height: 50px; overflow: hidden;">
-                            <div u="slides" class="col-lg-12" style="cursor: move; position: absolute; left: 0px; top: 0px; height: 50px;
+                            <div u="slides" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="cursor: move; position: absolute; left: 0px; top: 0px; height: 50px;
                             overflow: hidden;">
                                 <div>
-                                    <img u="image" src2="../img/home/01.jpg" />
+                                    <img u="image" src2="../img/home/bg1.jpg" />
                                 </div>
                                 <div>
-                                    <img u="image" src2="../img/home/02.jpg" />
+                                    <img u="image" src2="../img/home/bg2.jpg" />
                                 </div>
                                 <div>
-                                    <img u="image" src2="../img/home/03.jpg" />
+                                    <img u="image" src2="../img/home/bg3.jpg" />
                                 </div>
                                 <div>
-                                    <img u="image" src2="../img/home/04.jpg" />
+                                    <img u="image" src2="../img/home/bg4.jpg" />
                                 </div>
                             </div>
                             <!--#region Bullet Navigator Skin Begin -->

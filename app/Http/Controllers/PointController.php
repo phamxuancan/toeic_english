@@ -41,21 +41,36 @@
                 $user_id = $request->get('user_id', '');
                 $point = $request->get('point', '');
                 $time = $request->get('time', '');
+                $point_user = Point::getInstance()->getObjectsWheres(array('user_id'=>$user_id));
+                if(count($point_user)>0){
+                    if($point > $point_user[0]->point){
+                        $point = array(
+                            'point'=>$point,
+                            'updated_at' =>date('Y-m-d h:i:s')
+                        );
+                    }else{
+                        $point = array(
+                            'updated_at' =>date('Y-m-d h:i:s')
+                        );
+                    }
+                    Point::getInstance()->update($point,array('user_id'=>$user_id));
+                    return response()->json(array("message"=>"update point Success!","error"=>0));
+                }else{
+                    $point_info = array(
+                        "user_id" => $user_id,
+                        "point" => $point,
+                        "time"  => $time,
+                        "created_at" => date('Y-m-d h:i:s')
+                    );
 
-                $point_info = array(
-                    "user_id" => $user_id,
-                    "point" => $point,
-                    "time"  => $time,
-                    "created_at" => date('Y-m-d h:i:s')
-                );
+                    $result = Point::getInstance()->insert($point_info);
 
-                $result = Point::getInstance()->insert($point_info);
+                    if($result > 0){
+                        return response()->json(array("message"=>"Add point Success!","error"=>0));
+                    }else
+                        return response()->json(array("message"=>"Add point fail!","error"=>1));
 
-                if($result > 0){
-                    return response()->json(array("message"=>"Add point Success!","error"=>0));
-                }else
-                    return response()->json(array("message"=>"Add point fail!","error"=>1));
-
+                }
             }catch (\Exception $e){
                 return response()->json(array("message" => $e->getMessage(), "error" => 1));
             }

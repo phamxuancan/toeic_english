@@ -59,4 +59,12 @@
             $data = DBconnect::connection()->select($sql);
             return $data;
         }
+        public function delete($values=array()){
+            foreach($values as $key => $value){
+                $array[] = $key.'='."'$value'";
+            }
+            $datavalue = implode(' AND ',$array);
+            $sql = "DELETE FROM $this->table_name WHERE $datavalue";
+            return DBconnect::connection()->delete($sql);
+        }
     }
