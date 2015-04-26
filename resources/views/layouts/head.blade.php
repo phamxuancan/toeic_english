@@ -134,3 +134,17 @@
                 //responsive code end
     });
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('html').css('width',960);
+        win_wid = window.innerWidth;
+        if(win_wid > 960){
+            var tmp = win_wid -960;
+            tmp = tmp/2;
+            $('html').css('margin-left',tmp);
+            $('html').css('margin-rigth',tmp);
+//            $('html').css('background-color','darkseagreen');
+        }
+    });
+</script>

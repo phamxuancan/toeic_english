@@ -6,7 +6,7 @@
  * Time: 9:24 PM
  */
  ?>
- <div class="row">
+ <div class="navbar-custom">
     <!-- navbar -->
     <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">
