@@ -45,6 +45,7 @@ Route::post('/admins/deleteUser', 'AdminController@deleteUser');
 Route::post('/admins/deleteQuestion', 'AdminController@deleteQuestion');
 Route::get('/admins/logout', 'AdminController@logout');
 Route::get('/admins/userTestInday', 'AdminController@userTestInday');
+Route::get('/admins/pointFrom', 'AdminController@pointFrom');
 
 //get infor php current
 Route::get('/phpinfor', 'AdminController@phpinfor');

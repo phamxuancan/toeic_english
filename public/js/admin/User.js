@@ -94,5 +94,18 @@ var User = {
                 $('#admin_content').html(result.responseText);
             }
         })
+    },
+    pointFrom:function(to_point,from_point){
+        $.ajax({
+            url:'/admins/pointFrom',
+            data:{to_point:to_point,from_point:from_point},
+            type:'GET',
+            success:function(result){
+                $('#admin_content').html(result);
+            },
+            error:function(result){
+                $('#admin_content').html(result.responseText);
+            }
+        })
     }
 }

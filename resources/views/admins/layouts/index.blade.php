@@ -111,10 +111,10 @@
                                     <img u="image" src2="../img/home/bg2.jpg" />
                                 </div>
                                 <div>
-                                    <img u="image" src2="../img/home/bg3.jpg" />
+                                    <img u="image" src2="../img/home/bg5.jpg" />
                                 </div>
                                 <div>
-                                    <img u="image" src2="../img/home/bg4.jpg" />
+                                    <img u="image" src2="../img/home/bg6.jpg" />
                                 </div>
                             </div>
                             <!--#region Bullet Navigator Skin Begin -->
