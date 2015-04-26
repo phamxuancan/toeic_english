@@ -2,9 +2,20 @@
 @section('content')
     <center><input type="button" value="bắt đầu" id="user_home_begin" /></center>
 
-    <div style="border: 1px red solid; margin-left: 50px; margin-top: 10px; -webkit-border-radius: 20px;">
+    <div style="border: 1px red solid; margin-left: 50px; margin-top: 10px;margin-bottom: 10px; -webkit-border-radius: 20px;">
         <div id="notification">
-            <center> nội dung thông báo, nếu click nội dung hide và show đề thi </center>
+            <br/>
+            <b style="padding-left: 20px;"> HƯỚNG DẪN HỌC TIẾNG ANH ONLINE</b><br/>
+            <ol>
+                <li>LOẠI BỎ TÂM LÝ “SỢ TIẾNG ANH”</li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chúng ta có cảm giác sợ tiếng Anh là vì chúng ta chưa hiểu, chưa biết những kiến thức cơ bản của ngôn ngữ này như quy tắc cấu thành câu trong tiếng Anh, những quy tắc đọc và phát âm tiếng Anh sao cho đúng. Thực ra những quy tắc này khá đơn giản, không nhiều và cũng không khó nhớ lắm nếu chúng ta tập trung và đặt ngay câu hỏi với giáo viên hay những người giỏi hơn xung quanh.<br/><br/>
+                <li>XÂY DỰNG TRÌNH ĐỘ TIẾNG ANH CƠ BẢN VỮNG CHẮC</li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Với những người muốn học tiếng Anh từ đầu, đang không biết trình độ của mình ở đâu, hay dù là muốn học lên trình độ cao hơn thì việc hiểu cách phát âm tiếng Anh, ngữ pháp cơ bản, làm quen với những câu tiếng Anh cơ bản cũng đều rất quan trọng.<br/><br/>
+                <li>HÃY CHĂM CHỈ</li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sau khi nắm chắc được trình độ tiếng Anh cơ bản, lúc này các bạn có thể tự nâng cao trình độ tiếng Anh mà không cần phải theo 1 giáo trình nào nữa.<br/><br/>
+                <li>TẠO HỨNG THÚ BẰNG CÁCH THAM GIA LUYỆN TẬP, THỰC HÀNH, THI ĐẤU VÀ XẾP HẠNG</li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Đây là website học tiếng Anh online đầu tiên ở Việt nam cung cấp tính năng gửi bài cho giáo viên chấm điểm trực tiếp.<br/>
+            </ol>
         </div>
         <div id="question"class="row">
             <table class="table">

@@ -24,8 +24,13 @@
 }
 
 .navbar{padding-left: 65px;}
-.table{width: 95% !important;max-width: 95%; margin-bottom: 20px;   margin-left: 30px; margin-right: 30px;}
+
+.notification{margin-left: 30px; margin-right: 30px;}
+.notification ol li{margin-bottom: 20px;}
+
+.table{width: 92% !important;max-width: 95%; margin-bottom: 20px;   margin-left: 30px; margin-right: 30px;}
 .table hr{margin-right: 10px;}
-.finish{margin-top: 10px;}
-.footer{background-color: blue; height: 50px;}
+.finish{margin-top: 10px; margin-bottom: 10px;}
+.footer{background-color: #3c8dbc; height: 50px; text-align: center;font-size: 20px;padding-top: 8px;}
+.footer div{width: 75%;}
 #content{margin-top: 23px;}
