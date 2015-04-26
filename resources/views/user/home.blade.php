@@ -150,9 +150,10 @@
             score = 0;
             $(".rad:checked").each(function() {
                 if(ketqua.lastIndexOf($(this).val().substr(0,2))!= -1){
-                    score++;
+                    score = score + 0.5;
                 }
                 $('#showSorce').html("Điểm số của bạn: " + score);
+                $('#buttonFinish').hide();
             })
         }
 
