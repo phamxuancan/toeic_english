@@ -14,7 +14,7 @@
                     @yield('content')
                 </div>
 
-                <div id="right" class="col-md-3">
+                <div id="right" class="col-md-9">
                     @include('layouts.rightbar')
                 </div>
 
