@@ -8,7 +8,7 @@
     @section('content')
         <nav class="navbar navbar-default navbar-inverse">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav col-lg-12">
+                <ul class="nav navbar-nav col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <li style="width: 175px;">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý Câu hỏi<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -24,7 +24,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b>Thống kê</a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b class="fa fa-user"></b>Thống kê</a>
                           <ul class="dropdown-menu">
                             <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-file-text"></b>Người thi hôm nay</a></li>
                             <li><a href="#" onclick="User.pointFrom(50,100);"><b class="fa fa-file-text"></b>Đạt điểm từ 50->100</a></li>
@@ -39,11 +39,11 @@
                 </ul>
             </div>
         </nav>
-        <div class="col-lg-12">
-            <div class="col-lg-9" id="admin_content">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" id="admin_content">
 
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                  <div class="box box-solid box-primary">
                         <div class="box-header">
                             <h4 style="text-align: center;">Bảng xếp hạng</h4>
@@ -68,8 +68,8 @@
               <div class="modal-body">
                     <form id="admin_addQuestion" action="#" class="form-horizontal" method="POST" enctype="multipart/form-data" role="form">
                               <div class="form-group">
-                                    <label for="question" class="control-label col-lg-3 col-md-3  ">Loai câu hỏi :</label>
-                                    <div class="col-lg-9 col-md-9" >
+                                    <label for="question" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3  ">Loai câu hỏi :</label>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" >
                                         <select id="type_question" name="type" class="col-lg-4 col-md-4 btn btn-sm btn-small btn-success">
                                              <option value="text" class="btn btn-sm btn-small btn-success">text</option>
                                              <option value="audio" class="btn btn-sm btn-small btn-success">audio</option>
@@ -77,46 +77,46 @@
                                     </div>
                               </div>
                             <div class="form-group" id="text_question">
-                                <label for="question" class="control-label col-lg-3 col-md-3  ">Câu hỏi :</label>
-                                <div class="col-lg-9 col-md-9" >
+                                <label for="question" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3  ">Câu hỏi :</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" >
                                     <input type="text" class="form-control" name="question" id="question" placeholder="Nhập câu hỏi ....">
                                 </div>
                             </div>
                             <div class="form-group" id="audio_question" style="display: none;">
-                                <label for="sound" class="control-label col-lg-3 col-md-3  ">Audio :</label>
-                                <div class="col-lg-9 col-md-9" >
+                                <label for="sound" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3  ">Audio :</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" >
                                     <input type="file" class="form-control" name="sound" id="sound">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="answer_a" class="control-label col-lg-3 col-md-3 ">Đáp án A :</label>
-                                <div class="col-lg-9 col-md-9">
+                                <label for="answer_a" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3 ">Đáp án A :</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <input type="text" class="form-control" name="answer_a" id="answer_a" placeholder="Đáp án A...">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="answer_b" class="control-label col-lg-3 col-md-3 ">Đáp án B :</label>
-                                <div class="col-lg-9 col-md-9">
+                                <label for="answer_b" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3 ">Đáp án B :</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <input type="text" class="form-control" name="answer_b" id="answer_b" placeholder="Đáp án B...">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="answer_c" class="control-label col-lg-3 col-md-3 ">Đáp án C :</label>
-                                <div class="col-lg-9 col-md-9">
+                                <label for="answer_c" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3 ">Đáp án C :</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <input type="text" class="form-control" name="answer_c" id="answer_c" placeholder="Đáp án C...">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="answer_d" class="control-label col-lg-3 col-md-3 ">Đáp án D :</label>
-                                <div class="col-lg-9 col-md-9">
+                                <label for="answer_d" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3 ">Đáp án D :</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <input type="text" class="form-control" name="answer_d" id="answer_d" placeholder="Đáp án D...">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="answer_correct" class="control-label col-lg-3 col-md-3 ">Đáp án đúng :</label>
-                                <div class="col-lg-9 col-md-9">
-                                   <select id="answer_correct" name="answer_correct" class="col-lg-2 col-md-2 btn btn-sm btn-small btn-success">
+                                <label for="answer_correct" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3 ">Đáp án đúng :</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                   <select id="answer_correct" name="answer_correct" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 btn btn-sm btn-small btn-success">
                                          <option value="A" class="btn btn-sm btn-small btn-success">A</option>
                                          <option value="B" class="btn btn-sm btn-small btn-success">B</option>
                                          <option value="C" class="btn btn-sm btn-small btn-success">C</option>
@@ -144,8 +144,8 @@
               <div class="modal-body">
                     <form id="admin_adduser" action="#" class="form-horizontal" method="POST" enctype="multipart/form-data" role="form">
                               <div class="form-group">
-                                    <label for="question" class="control-label col-lg-3 col-md-3  ">Quyền người dùng</label>
-                                    <div class="col-lg-9 col-md-9" >
+                                    <label for="question" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3  ">Quyền người dùng</label>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" >
                                         <select id="type_question" name="permission" class="col-lg-4 col-md-4 btn btn-sm btn-small btn-success">
                                              <option value="admin" class="btn btn-warning">Admin</option>
                                              <option value="user" class="btn btn-success">User</option>
@@ -153,27 +153,27 @@
                                     </div>
                               </div>
                             <div class="form-group">
-                                <label for="username" class="control-label col-lg-3 col-md-3  ">Tên đăng nhập</label>
-                                <div class="col-lg-9 col-md-9" >
+                                <label for="username" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3  ">Tên đăng nhập</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" >
                                     <input type="text" class="form-control" name="username" id="username" placeholder="Nhập tên đăng nhập...">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email" class="control-label col-lg-3 col-md-3  ">Email :</label>
-                                <div class="col-lg-9 col-md-9" >
+                                <label for="email" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3  ">Email :</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" >
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Nhập email ...">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="password" class="control-label col-lg-3 col-md-3 ">Mật khẩu</label>
-                                <div class="col-lg-9 col-md-9">
+                                <label for="password" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3 ">Mật khẩu</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <input type="text" class="form-control" name="password" id="password" placeholder="Nhập mật khẩu...">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="avatar" class="control-label col-lg-3 col-md-3 ">Avatar</label>
-                                <div class="col-lg-9 col-md-9">
+                                <label for="avatar" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3 ">Avatar</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <input type="file" class="form-control" name="avatar" id="avatar">
                                 </div>
                             </div>

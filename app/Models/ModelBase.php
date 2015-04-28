@@ -41,7 +41,7 @@
                     $array[] = $key.'='."'$value'";
                 }
                 $condition = implode(' AND ',$array);
-                $sql = "SELECT * FROM $this->table_name WHERE $condition";
+                $sql = "SELECT * FROM $this->table_name WHERE $condition ORDER BY id DESC";
                 $data = DBconnect::connection()->select($sql);
                 return $data;
             }

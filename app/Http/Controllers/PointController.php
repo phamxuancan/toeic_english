@@ -60,7 +60,8 @@
                         "user_id" => $user_id,
                         "point" => $point,
                         "time"  => $time,
-                        "created_at" => date('Y-m-d h:i:s')
+                        "created_at" => date('Y-m-d h:i:s'),
+                        "updated_at" => date('Y-m-d h:i:s')
                     );
 
                     $result = Point::getInstance()->insert($point_info);
