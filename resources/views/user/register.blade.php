@@ -23,7 +23,7 @@
        </div>
 
        <div class="form-group">
-          <label for="avatar" class="control-label col-lg-2 col-lg-offset-3">File:</label>
+          <label for="avatar" class="control-label col-lg-2 col-lg-offset-3">Avatar:</label>
           <div class="col-lg-2 ">
               <input type="file" name="avatar" id="avatar" class="form-control"/>
           </div>
