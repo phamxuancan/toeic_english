@@ -78,7 +78,7 @@
                     $user_id = User::getInstance()->insert($user_infor);
 
                     if ($user_id && $permission == 'user') {
-                        Auth::attempt($request->all());
+                        Auth::attempt(array('username'=>$username,'password'=>$password));
                         return redirect()->to('/');
                     }elseif($user_id && $permission == 'admin'){
                         return response()->json(array("message" =>'Add User success', "error" => 0));
