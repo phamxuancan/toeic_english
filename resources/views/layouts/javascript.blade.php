@@ -10,7 +10,7 @@
 <script type="text/javascript">
     function getTop(){
         var top = "";
-        $.get( "http://toeic.local.com/admins/topPoint", function( data ) {
+        $.get( "admins/topPoint", function( data ) {
             $('#topuser').html(data);
         });
     }
