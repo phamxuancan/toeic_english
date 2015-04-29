@@ -9,20 +9,20 @@
         <nav class="navbar navbar-default">
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <li style="width: 174px;">
+                    <li style="width: 165px;text-align: center;">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b> Quản lý người dùng</a>
                           <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="modal" data-target="#createUserAdmin"><b class="fa fa-plus"></b>Thêm người dùng</a></li>
                         </ul>
                     </li>
-                    <li style="width: 195px;">
+                    <li style="width: 183px;text-align: center;">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thống kê người dùng<b class="fa caret"></b></a>
                           <ul class="dropdown-menu">
                             <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-align-right"></b>Người thi hôm nay</a></li>
-                            <li><a href="#" onclick="User.pointFrom(50,100);"><b class="fa fa-align-right"></b>Đạt điểm từ 50->100</a></li>
+                            <li><a href="#" onclick="User.pointFrom(10,100);"><b class="fa fa-align-right"></b>Đạt điểm từ 10->100</a></li>
                         </ul>
                     </li>
-                    <li style="width: 175px;">
+                    <li style="width: 170px;text-align: center;">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý Câu hỏi<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="modal" data-target="#createQuestionForm"><b class="fa fa-plus"></b>Thêm câu hỏi mới</a></li>
