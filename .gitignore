@@ -4,3 +4,4 @@
 /.idea
 /laravel
 /composer.phar
+/config/app.php

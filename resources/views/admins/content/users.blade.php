@@ -1,12 +1,11 @@
-<div class="panel panel-default">
-    <div class="panel-heading">Danh sách người dùng</div>
+<div class="panel panel-info">
+    <div  class="panel-heading">Danh sách người dùng</div>
           <div class="panel-body">
                <table class="table table-bordered table-hover table-striped table_add_friend">
                    <tr class="bg-info"  >
-                       <th class="bg-info" style="text-align: center;" >ID</th>
+                       <th class="bg-info" style="text-align: center;" >ID người dùng</th>
                        <th class="bg-info" style="text-align: center;">Avatar</th>
                        <th class="bg-info" style="text-align: center;">Username</th>
-                       <th class="bg-info" style="text-align: center;">Email</th>
                        <th class="bg-info" style="text-align: center;">Ngày tạo</th>
                        <th class="bg-info" style="text-align: center;">Quyền</th>
                        <th class="bg-info" style="text-align: center;">Chức năng</th>
@@ -16,7 +15,6 @@
                            <td style="text-align: center;" >{{$user->id}}</td>
                            <td style="text-align: center;"><img src="<?php echo URL::to('/') ?>/uploads/avatar/{{$user->avatar}}" height="50" /></td>
                            <td style="text-align: center;">{{$user->username}}</td>
-                           <td style="text-align: center;">{{$user->email}}</td>
                            <td style="text-align: center;">{{$user->created_at}}</td>
                            <td style="text-align: center;">{{$user->permission}}</td>
                            <td style="text-align: center;">

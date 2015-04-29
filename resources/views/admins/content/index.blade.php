@@ -6,9 +6,22 @@
         });
     </script>
     @section('content')
-        <nav class="navbar navbar-default navbar-inverse">
+        <nav class="navbar navbar-default">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <li style="width: 174px;">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b> Quản lý người dùng</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#" data-toggle="modal" data-target="#createUserAdmin"><b class="fa fa-plus"></b>Thêm người dùng</a></li>
+                        </ul>
+                    </li>
+                    <li style="width: 195px;">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thống kê người dùng<b class="fa caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-align-right"></b>Người thi hôm nay</a></li>
+                            <li><a href="#" onclick="User.pointFrom(50,100);"><b class="fa fa-align-right"></b>Đạt điểm từ 50->100</a></li>
+                        </ul>
+                    </li>
                     <li style="width: 175px;">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý Câu hỏi<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -17,23 +30,10 @@
                             <li><a href="#" onclick="Questions.listQuestion('text');"><b class="fa fa-file-text"></b>Câu hỏi Text</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b>Quản lý người dùng</a>
-                          <ul class="dropdown-menu">
-                            <li><a href="#" data-toggle="modal" data-target="#createUserAdmin"><b class="fa fa-plus"></b>Thêm người dùng</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b class="fa fa-user"></b>Thống kê</a>
-                          <ul class="dropdown-menu">
-                            <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-file-text"></b>Người thi hôm nay</a></li>
-                            <li><a href="#" onclick="User.pointFrom(50,100);"><b class="fa fa-file-text"></b>Đạt điểm từ 50->100</a></li>
-                        </ul>
-                    </li>
                          <?php use Illuminate\Support\Facades\Session;
                          if(session::has('admin_user')){
 
-                            echo '<li><a href="/admins/logout" ><b class="fa fa-mail-reply"></b>Logout</a></li>';
+                            echo '<li><a href="/admins/logout" >Đăng xuất <b class="fa fa-arrow-circle-o-right pull-right"></b></a></li>';
 
                          } ?>
                 </ul>
@@ -44,9 +44,9 @@
 
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                 <div class="box box-solid box-primary">
+                 <div class="box box-solid box-warning">
                         <div class="box-header">
-                            <h4 style="text-align: center;">Bảng xếp hạng</h4>
+                            <h4 style="text-align: center;">Điểm cao</h4>
                         </div>
                         <div class="box-body">
                             <div id="top_point">
