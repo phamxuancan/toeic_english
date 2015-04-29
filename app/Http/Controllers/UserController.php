@@ -53,6 +53,9 @@
                             'permission'    => $permission
                         )
                     );
+                    if($username== '' || $password==''){
+                        return response()->json(array("message" => 'Hãy nhập đầy đủ tên đăng nhập và mật khẩu!', "error" => 1));
+                    }
                     if(count($user) > 0){
                         return response()->json(array("message" => 'Người dùng đã tồn tại!', "error" => 1));
                     }

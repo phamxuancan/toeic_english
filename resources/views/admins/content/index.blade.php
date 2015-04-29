@@ -7,7 +7,7 @@
     </script>
     @section('content')
         <nav class="navbar navbar-default">
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <li style="width: 174px;">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b> Quản lý người dùng</a>
@@ -33,7 +33,7 @@
                          <?php use Illuminate\Support\Facades\Session;
                          if(session::has('admin_user')){
 
-                            echo '<li><a href="/admins/logout" >Đăng xuất <b class="fa fa-arrow-circle-o-right pull-right"></b></a></li>';
+                            echo '<li class=" pull-right"><a href="/admins/logout" >Đăng xuất <b class="fa fa-arrow-circle-o-right"></b></a></li>';
 
                          } ?>
                 </ul>
@@ -168,7 +168,7 @@
                             <div class="form-group">
                                 <label for="password" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3 ">Mật khẩu</label>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <input type="text" class="form-control" name="password" id="password" placeholder="Nhập mật khẩu...">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Nhập mật khẩu...">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -201,4 +201,9 @@
             });
 
             </script>
+            <style type="text/css">
+                #navbar-collapse li:hover{
+                background-color:#e1bcff;
+                }
+            </style>
     @endsection

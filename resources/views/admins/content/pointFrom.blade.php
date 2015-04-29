@@ -1,5 +1,5 @@
 @if(count($users) > 0)
-<div class="panel panel-default">
+<div class="panel panel-primary">
     <div class="panel-heading">Danh sách người thi</div>
           <div class="panel-body">
                <table class="table table-bordered table-hover table-striped table_add_friend">

@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-primary">
     <div class="panel-heading">{{$type}}</div>
           <div class="panel-body">
                <table class="table table-bordered table-hover table-striped table_add_friend">
