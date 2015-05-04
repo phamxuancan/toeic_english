@@ -24,6 +24,25 @@
 
         </div>
 
+
+        <script>
+            jQuery(document).ready(function($) {
+//                var i = 1;
+//                for(i=1;i<10;i++){
+//                    var tmp = "#progressbar" + i ;
+//                    var value_index = parseInt($(tmp).attr('value-index'));
+//                    $( tmp ).progressbar( { "value": value_index });
+//                }
+            });
+        </script>
+        {{--<div style="height: 100px; border: 1px greenyellow solid">--}}
+        <?php
+//            for($i=1;$i<10;$i++){
+//                echo "<p id='progressbar".$i."' value-index='".rand(0,100)."'></p>";
+//            }
+        ?>
+        {{--</div>--}}
+
         @include('layouts.javascript')
 	</body>
 </html>

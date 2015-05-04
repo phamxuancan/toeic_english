@@ -44,7 +44,10 @@
 
 <link href="<?php echo URL::to('/') ?>/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="<?php echo URL::to('/') ?>/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+
 <script src="<?php echo URL::to('/') ?>/bootstrap/js/jquery-1.11.2.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
 <script src="<?php echo URL::to('/') ?>/bootstrap/js/bootstrap.js"></script>
 <script src="<?php echo URL::to('/') ?>/bootstrap/js/user.js"></script>
 <script src="<?php echo URL::to('/') ?>/js/category.js"></script>
