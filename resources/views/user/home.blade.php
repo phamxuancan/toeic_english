@@ -82,7 +82,7 @@
                 $('.finish').show();
                 $('#user_home_begin').hide();
 
-                var url = home+"questions";
+                var url = "questions";
 
                 $.get(url,function(result,status,jxhr){
                     var request = result.text;
@@ -188,7 +188,7 @@
             if(user_id == 0){
                 
             }else{
-                $.post( home+"point/add", {user_id: user_id, point: score , time: minus+""+seconds})
+                $.post( "point/add", {user_id: user_id, point: score , time: minus+""+seconds})
                 .done(function( data ) {
                     if(data.error == 1){
                         alert(data.message);
@@ -221,7 +221,7 @@
                  if (seconds<=-1){
                     seconds=0 ;
                     minus+=1 ;
-                    window.location.href = "http://toeic.local.com/";
+                    window.location.href = home;
                  }
                  else
                     seconds-=1 ;
