@@ -1,4 +1,4 @@
-<div id="countTime" style="visibility: hidden; background: greenyellow; width: 100%;height: 50px;  position: fixed; left: 0px; display: inline-block; overflow: hidden; z-index: 9;">
+<div id="countTime" style="visibility: hidden; background-color: #ffacae; width: 100%;height: 50px;  position: fixed; left: 0px; display: inline-block; overflow: hidden; z-index: 9;">
 
     <form name="counter" style="margin-left: 60px; margin-top: 10px;">
         <label>Thời gian còn lại:</label>

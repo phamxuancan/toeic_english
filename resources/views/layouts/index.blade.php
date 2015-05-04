@@ -10,13 +10,15 @@
 
             <div id="content" class="row">
                 @include('layouts.navbar')
+                <div id="right" class="col-md-9">
+                    @include('layouts.rightbar')
+                </div>
+
                 <div id="left" class="col-md-9">
                     @yield('content')
                 </div>
 
-                <div id="right" class="col-md-9">
-                    @include('layouts.rightbar')
-                </div>
+
 
             </div>
 
