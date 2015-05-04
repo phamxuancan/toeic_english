@@ -2,7 +2,7 @@
 @section('content')
     <center><input type="button" value="bắt đầu" id="user_home_begin" /></center>
 
-    <div style="border: 1px red solid; margin-left: 50px; margin-top: 10px;margin-bottom: 10px; -webkit-border-radius: 20px;">
+    <div style="border: 1px red solid; margin-left: 20px; margin-right: 10px; margin-top: 10px;margin-bottom: 10px; -webkit-border-radius: 20px;">
         <div id="notification">
             <br/>
             <b style="padding-left: 20px;"> HƯỚNG DẪN HỌC TIẾNG ANH ONLINE</b><br/>

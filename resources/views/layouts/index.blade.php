@@ -14,7 +14,7 @@
                     @include('layouts.rightbar')
                 </div>
 
-                <div id="left" class="col-md-9">
+                <div id="left" class="col-md-9" style="padding-left: 0px;">
                     @yield('content')
                 </div>
 

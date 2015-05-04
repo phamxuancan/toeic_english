@@ -10,8 +10,8 @@
 </div>
 
 <div id="header" class="row">
-    <div id="slider1_container" style=" position: relative; margin: 0 auto; width: 350px; height: 65px; overflow: hidden;">
-        <div u="slides" class="col-lg-12" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 350px; height: 65px;
+    <div id="slider1_container" style=" position: relative; margin: 0 auto; width: 960px!important; height: 170px!important; overflow: hidden;">
+        <div u="slides" class="col-lg-12" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 960px!important; height: 170px!important;
         overflow: hidden;">
             <div>
                 <img u="image" src2="../img/home/06.jpg" />
