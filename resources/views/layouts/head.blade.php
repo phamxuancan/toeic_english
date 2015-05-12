@@ -36,7 +36,7 @@
 <meta property="og:url" 		content="{{ URL::full() }}" />
 <meta property="og:type" 		content="website" />
 
-<link rel="shortcut icon" href="{{ Config::get('main') .'/public/assets/img/logo/favicon.ico' }}" type="image/x-icon"/>
+<link rel="shortcut icon" href="{{ Config::get('main') .'/favicon.ico' }}" type="image/x-icon"/>
 
 <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="/css/style.css" rel="stylesheet" type="text/css"/>
@@ -132,7 +132,14 @@
                 $(window).bind("resize", ScaleSlider);
                 $(window).bind("orientationchange", ScaleSlider);
                 //responsive code end
+                var wh = $(window).height();
+
+                var mhd = wh - 190 - 50;
+
+
+                $('#content').css("min-height", mhd);
     });
+
 </script>
 
 <script type="text/javascript">

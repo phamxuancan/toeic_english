@@ -34,7 +34,7 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Be right back.</div>
+				<div class="title"><a href="/" style="  text-decoration: none;">Be right back.</a></div>
 			</div>
 		</div>
 	</body>

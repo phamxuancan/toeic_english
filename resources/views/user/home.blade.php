@@ -57,7 +57,7 @@
 
 @section('javascript')
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/bootstrap/js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript">
         //biến toàn cục
         var ketqua = new Array();
@@ -221,7 +221,7 @@
                  if (seconds<=-1){
                     seconds=0 ;
                     minus+=1 ;
-                    window.location.href = "http://toeic.local.com/";
+                    window.location.href = home;
                  }
                  else
                     seconds-=1 ;

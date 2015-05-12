@@ -31,10 +31,10 @@
 					if(Auth::attempt($input)){
                         return redirect()->to('/');
 					}else{
-						return response()->json(array('message'=>'Login fail!','error'=>1));
+						return view('errors.503');
 					}
 				}catch (\Exception $e){
-					return response()->json(array('message'=>$e->getMessage(),'error'=>1));
+                    return view('errors.503');
 				}
 			}else return view('user.login');
         }
