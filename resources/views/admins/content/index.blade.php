@@ -9,7 +9,7 @@
         <nav class="navbar navbar-default navbar-inverse">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <li style="width: 175px;">
+                    <li style="width: 170px;text-align: center;">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý Câu hỏi<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="modal" data-target="#createQuestionForm"><b class="fa fa-plus"></b>Thêm câu hỏi mới</a></li>
@@ -18,13 +18,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b>Quản lý người dùng</a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" onclick="User.managerUser();"><b class="fa fa-user"></b>Quản lý người dùng<b class="caret"></b></a>
                           <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="modal" data-target="#createUserAdmin"><b class="fa fa-plus"></b>Thêm người dùng</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b class="fa fa-user"></b>Thống kê</a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b class="fa fa-user"></b>Thống kê<b class="caret"></b></a>
                           <ul class="dropdown-menu">
                             <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-file-text"></b>Người thi hôm nay</a></li>
                             <li><a href="#" onclick="User.pointFrom(50,100);"><b class="fa fa-file-text"></b>Đạt điểm từ 50->100</a></li>

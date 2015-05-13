@@ -1,31 +1,39 @@
 @extends('admins.layouts.index')
 @section('content')
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-lg-offset-3 col-sm-offset-3 col-xs-offset-3" style="margin-top: 100px;">
-    <div class="alert-danger alert" id="error" style="display: none;"></div>
-    <form id="admin_login" action="#" class="form-horizontal" method="POST" enctype="multipart/form-data" role="form">
-        <div class="form-group">
-            <label for="username" class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-2">Username:</label>
-            <div class="col-lg-10 col-md-10  col-sm-10  col-xs-10" >
-                <input type="text" class="form-control" name="username" id="username" placeholder="Email">
-            </div>
+<div class="container">
+    <div id="place_login" class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading text-center"><span style="font-weight: bold;font-size: 25px;">Đăng nhập </span></div>
+                <div class="panel-body">
+                <h4 class="alert-danger alert" id="error" style="display: none;text-align: center"></h4>
+                    <form class="form-horizontal" id="form_login">
+                        <div class="form-group">
+                             <label for="username" class="fa fa-user col-lg-1 control-label fa-2x"></label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Nhập tên tài khoản...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="fa fa-lock fa-2x col-lg-1 control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Nhập mật khẩu...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-5 col-lg-10">
+                                <a  class="btn btn-info" href="/users/home" >Trang chủ</a>
+                                <button type="button" class="btn" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng nhập</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
         </div>
-        <div class="form-group">
-            <label for="inputPassword" class="control-label col-xs-2">Mật khẩu</label>
-            <div class="col-lg-10 col-md-10  col-sm-10  col-xs-10">
-                <input type="password" class="form-control" name="inputPassword" id="inputPassword" placeholder="Mật khẩu">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-lg-10 col-md-10  col-sm-10  col-xs-10 col-lg-offset-5 col-md-offset-5 col-sm-offset-5 col-xs-offset-5">
-                <button type="button" class="btn" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng nhập</button>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
          $('#btn_login').on('click',function(){
-            var form = $('#admin_login')[0];
+            var form = $('#form_login')[0];
             formData = new FormData(form);
                 $.ajax({
                     url:"/admins/confirm",

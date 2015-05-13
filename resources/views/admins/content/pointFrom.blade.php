@@ -12,7 +12,11 @@
                    @foreach($users as $user)
                        <tr >
                            <td style="text-align: center;" >{{$user->id}}</td>
-                           <td style="text-align: center;"><img src="<?php echo URL::to('/') ?>/uploads/avatar/{{$user->avatar}}" height="50" /></td>
+                             @if($user->avatar != '')
+                                   <td style="text-align: center;"><img src="<?php echo URL::to('/') ?>/uploads/avatar/{{$user->avatar}}" height="50" /></td>
+                               @else
+                                    <td style="text-align: center;"><img src="<?php echo URL::to('/') ?>/images/avatar/no_avata_boy.jpg" height="50" /></td>
+                               @endif
                            <td style="text-align: center;">{{$user->username}}</td>
                             <td style="text-align: center;">{{$user->point}}</td>
                        </tr>
