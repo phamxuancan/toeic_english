@@ -74,7 +74,7 @@
                         "username" => $username,
                         "password" => $encode_password,
                         'email'    => $email,
-                        "created_at" => date('Y-m-d h:i:s'),
+                        "created_at" => date('d-m-Y h:i:s'),
                         "avatar" => $filename,
                         'permission'=>$permission
                     );
