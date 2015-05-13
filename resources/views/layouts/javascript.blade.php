@@ -10,7 +10,8 @@
 <script type="text/javascript">
     function getTop(){
         var top = "";
-        $.get( "admins/topPoint", function( data ) {
+        var url = home + "/admins/topPoint";
+        $.get( url, function( data ) {
             $('#topuser').html(data);
         });
     }
