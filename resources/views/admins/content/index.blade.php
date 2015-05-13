@@ -23,11 +23,11 @@
                         </ul>
                     </li>
                     <li style="width: 170px;text-align: center;">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý Câu hỏi<b class="caret"></b></a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý câu hỏi<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="modal" data-target="#createQuestionForm"><b class="fa fa-plus"></b>Thêm câu hỏi mới</a></li>
                             <li><a href="#" onclick="Questions.listQuestion('audio');"><b class="fa fa-reply-all"></b>Câu hỏi âm thanh</a></li>
-                            <li><a href="#" onclick="Questions.listQuestion('text');"><b class="fa fa-file-text"></b>Câu hỏi Text</a></li>
+                            <li><a href="#" onclick="Questions.listQuestion('text');"><b class="fa fa-file-text"></b>Câu hỏi text</a></li>
                         </ul>
                     </li>
                          <?php use Illuminate\Support\Facades\Session;
