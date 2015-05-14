@@ -10,6 +10,7 @@
 
             <div id="content" class="row">
                 @include('layouts.navbar')
+
                 <div id="right" class="col-md-9" style="padding-left: 28px;">
                     @include('layouts.rightbar')
                 </div>

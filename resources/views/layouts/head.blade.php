@@ -135,6 +135,9 @@
                 $(window).bind("resize", ScaleSlider);
                 $(window).bind("orientationchange", ScaleSlider);
                 //responsive code end
+                var wh = $(window).height();
+                var mhd = wh - 190 - 50;
+                $('#content').css("min-height", mhd);
     });
 </script>
 
