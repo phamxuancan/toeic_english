@@ -19,7 +19,7 @@
                                 <td style="text-align: center;"><img src="<?php echo URL::to('/') ?>/images/avatar/no_avata_boy.jpg" height="50" /></td>
                            @endif
                            <td style="text-align: center;">{{$user->username}}</td>
-                           <td style="text-align: center;">{{$user->updated_at}}</td>
+                           <td style="text-align: center;">{{$user->time}}</td>
                             <td style="text-align: center;">{{$user->point}}</td>
                        </tr>
                    @endforeach
