@@ -4,8 +4,8 @@
 <div id="outside_form">
     <form action="" method="post" class="form-horizontal" enctype="multipart/form-data" id="form_register" style="text-align: center" >
         {{--dddd--}}
-        <div class="panel panel-info">
-            <div class="panel-heading text-center"><span style="font-weight: bold;font-size: 25px;">Đăng kí </span></div>
+        <div class="panel panel-info" style="border: 1px;">
+            <div class="panel-heading text-center" style="height:40px;margin-top:20px;padding-top:5px;"><span style="font-weight: bold;font-size: 25px;">Đăng kí </span></div>
                 <div class="panel-body">
                 <h4 class="alert-danger alert" id="error" style="display: none;text-align: center"></h4>
                     <form class="form-horizontal" id="form_login">
@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <div class="col-lg-offset-5 col-lg-10">
                                 <a class="btn btn-info" href="/users/home">Trang chủ</a>
-                                <button type="submit" class="btn" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng nhập</button>
+                                <button type="submit" class="btn" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng kí</button>
                             </div>
                         </div>
                     </form>
