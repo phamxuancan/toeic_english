@@ -4,8 +4,8 @@
     <div id="outside_form">
         <form action="/users/authentication" id="form_login" method="post" class="text-center form-horizontal" role="form" enctype="multipart/form-data">
             {{--dddd--}}
-            <div class="panel panel-info">
-                <div class="panel-heading text-center"><span style="font-weight: bold;font-size: 25px;">Đăng nhập </span></div>
+            <div class="panel panel-info" style="border: 1px;">
+                <div class="panel-heading text-center" style="height:40px;margin-top:20px;padding-top:5px;"><span style="font-weight: bold;font-size: 25px;">Đăng nhập </span></div>
                     <div class="panel-body">
                     <h4 class="alert-danger alert" id="error" style="display: none;text-align: center"></h4>
                         <form class="form-horizontal" id="form_login">
