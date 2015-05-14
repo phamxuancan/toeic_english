@@ -3,37 +3,46 @@
 @section('content')
 <div id="outside_form">
     <form action="" method="post" class="form-horizontal" enctype="multipart/form-data" id="form_register" style="text-align: center" >
-       <div class="form-group ">
-            <label class="control-label col-lg-2 col-lg-offset-3" for="username">username :</label>
-            <div class="col-lg-2">
-               <input type="text" name="username" id="username" class="form-group" />
-            </div>
-       </div>
-       <div class="form-group ">
-            <label class="control-label col-lg-2 col-lg-offset-3  " for="password">Password:</label>
-            <div class="col-lg-2 ">
-               <input type="password" name="password" id="password" class="form-group" />
-            </div>
-       </div>
-       <div class="form-group ">
-           <label class="control-label col-lg-2 col-lg-offset-3  " for="repassword">Repassword:</label>
-           <div class="col-lg-2 ">
-              <input type="password" name="repassword" id="repassword" class="form-group" />
-           </div>
-       </div>
-
-       <div class="form-group">
-          <label for="avatar" class="control-label col-lg-2 col-lg-offset-3">Avatar:</label>
-          <div class="col-lg-2 ">
-              <input type="file" name="avatar" id="avatar" class="form-control"/>
-          </div>
-       </div>
-       <div class="form-group">
-            <div class="col-lg-offset-5 col-lg-1">
-               <input id="bnt_sub" class="btn btn-sm btn-success" data-loading-text="Loading..." type="submit"></span>
-            </div>
-            {{--<input type="hidden" name="remember_token" value="{{ csrf_token() }}">--}}
-       </div>
+        {{--dddd--}}
+        <div class="panel panel-info">
+            <div class="panel-heading text-center"><span style="font-weight: bold;font-size: 25px;">Đăng kí </span></div>
+                <div class="panel-body">
+                <h4 class="alert-danger alert" id="error" style="display: none;text-align: center"></h4>
+                    <form class="form-horizontal" id="form_login">
+                        <div class="form-group">
+                             <label for="username" class="fa fa-user col-lg-1 control-label fa-2x"></label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Nhập tên tài khoản...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="fa fa-lock fa-2x col-lg-1 control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="repassword" class="fa fa-lock fa-2x col-lg-1 control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Nhập lại mật khẩu...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="avatar" class="fa fa-lock fa-2x col-lg-1 control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="file" class="form-control" id="avatar" name="avatar" placeholder="avata">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-5 col-lg-10">
+                                <a class="btn btn-info" href="/users/home">Trang chủ</a>
+                                <button type="submit" class="btn" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng nhập</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+        {{--ddd--}}
     </form>
 </div>
 @endsection
