@@ -19,7 +19,7 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thống kê người dùng<b class="fa caret"></b></a>
                           <ul class="dropdown-menu">
                             <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-align-right"></b>Người thi hôm nay</a></li>
-                            <li><a href="#"><b class="fa fa-align-right"></b>Số người đạt điểm [A,B]</a></li>
+                            <li><a href="/admins/searchFointFrom"><b class="fa fa-align-right"></b>Số người đạt điểm [A,B]</a></li>
                         </ul>
                     </li>
                     <li style="width: 170px;text-align: center;">
