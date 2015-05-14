@@ -31,7 +31,7 @@ use App\Models\ModelBase;
             return $data;
         }
         public function getUserFromPoint($to_point,$from_point){
-            $sql = "SELECT * FROM point INNER JOIN user ON point.user_id = user.id WHERE point.point > $to_point AND point.point < $from_point ";
+            $sql = "SELECT * FROM point INNER JOIN user ON point.user_id = user.id WHERE point.point > $from_point AND point.point < $to_point ";
             $data = DBconnect::connection()->select($sql);
             return $data;
         }
