@@ -47,6 +47,12 @@
                     $password = $request->get('password', '');
                     $email = $request->get('email', '');
                     $filename = '';
+                    if($username == ''){
+                        return response()->json(array("message" => 'Bạn hãy nhập tên người dùng!', "error" => 1));
+                    }
+                    if($password == ''){
+                        return response()->json(array("message" => 'Bạn hãy nhập password!', "error" => 1));
+                    }
                     $user = User::getInstance()->getObjectsWheres(
                         array('username'=> $username,
                             'password'=> md5($password),
