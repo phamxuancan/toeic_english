@@ -3,9 +3,13 @@
  */
 var User = {
     init:function(){
-      that = this;
-      that.listTopUser();
+        that = this;
+        that.listTopUser();
         that.managerUser();
+    },
+    instancePoint:function(){
+        that = this;
+        that.listTopUser();
     },
     managerUser:function(){
         $.ajax({
@@ -95,16 +99,23 @@ var User = {
             }
         })
     },
-    pointFrom:function(to_point,from_point){
+    pointFrom:function(myself){
+        var from_point  = $('#fromPoint').val();
+        var to_point    = $('#toPoint').val();
         $.ajax({
             url:'/admins/pointFrom',
             data:{to_point:to_point,from_point:from_point},
             type:'GET',
+            beforeSend:function(){
+                $(myself).button('loading');
+            },
             success:function(result){
-                $('#admin_content').html(result);
+                $(myself).button('reset');
+                $('#admin_point').html(result);
             },
             error:function(result){
-                $('#admin_content').html(result.responseText);
+                $(myself).button('reset');
+                $('#admin_point').html(result.responseText);
             }
         })
     }

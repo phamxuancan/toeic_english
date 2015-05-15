@@ -91,17 +91,19 @@ namespace App\Http\Controllers;
         }
         public function pointFrom(Request $request){
             try{
-                $to_point = $request->get('to_point');
-                $from_point = $request->get('from_point');
+                $to_point = $request->get('to_point',0);
+                $from_point = $request->get('from_point',0);
                 $users = User::getInstance()->getUserFromPoint($to_point,$from_point);
-                return view('admins.content.pointFrom',array('users'=>$users));
+                return view('admins.content.searchPointFrom',array('users'=>$users));
             }catch (\Exception $e){
                 return response()->json(array('mesage'=>$e->getMessage(),'error'=>1));
             }
-
         }
         public function phpinfor(){
             return md5('adminadmin');
             return phpinfo();
+        }
+        public function searchFointFrom(){
+            return view('admins.content.pointFrom');
         }
     }

@@ -21,8 +21,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-lg-offset-5 col-lg-10">
-                                <a  class="btn btn-info" href="/users/home" >Trang chủ</a>
-                                <button type="button" class="btn" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng nhập</button>
+                                <button type="button" class="btn btn-lg btn-success" data-loading-text="Đang đăng nhập..." id="btn_login">Đăng nhập</button>
                             </div>
                         </div>
                     </form>

@@ -27,7 +27,7 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b class="fa fa-user"></b>Thống kê<b class="caret"></b></a>
                           <ul class="dropdown-menu">
                             <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-file-text"></b>Người thi hôm nay</a></li>
-                            <li><a href="#" onclick="User.pointFrom(50,100);"><b class="fa fa-file-text"></b>Đạt điểm từ 50->100</a></li>
+                            <li><a href="/admins/searchFointFrom"><b class="fa fa-file-text"></b>Đạt điểm trong [A,B]</a></li>
                         </ul>
                     </li>
                          <?php use Illuminate\Support\Facades\Session;
