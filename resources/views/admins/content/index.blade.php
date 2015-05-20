@@ -15,16 +15,16 @@
                             <li><a href="#" data-toggle="modal" data-target="#createUserAdmin"><b class="fa fa-plus"></b>Thêm người dùng</a></li>
                         </ul>
                     </li>
-                    <li style="width: 183px;text-align: center;">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thống kê người dùng<b class="fa caret"></b></a>
-                          <ul class="dropdown-menu">
+                    <li style="text-align: center;">
+                        <a style="width: 200px;text-align: center;" href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-file"></i>Thống kê người dùng<b class="fa caret"></b></a>
+                          <ul class="dropdown-menu" style="width: 200px;">
                             <li><a href="#" onclick="User.userTestInday();"><b class="fa fa-align-right"></b>Người thi hôm nay</a></li>
                             <li><a href="/admins/searchFointFrom"><b class="fa fa-align-right"></b>Số người đạt điểm [A,B]</a></li>
                         </ul>
                     </li>
                     <li style="width: 170px;text-align: center;">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý câu hỏi<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-question"></i>Quản lý câu hỏi<b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="width: 170px;">
                             <li><a href="#" data-toggle="modal" data-target="#createQuestionForm"><b class="fa fa-plus"></b>Thêm câu hỏi mới</a></li>
                             <li><a href="#" onclick="Questions.listQuestion('audio');"><b class="fa fa-reply-all"></b>Câu hỏi âm thanh</a></li>
                             <li><a href="#" onclick="Questions.listQuestion('text');"><b class="fa fa-file-text"></b>Câu hỏi text</a></li>
