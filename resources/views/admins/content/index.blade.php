@@ -10,11 +10,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <li style="width: 170px;text-align: center;">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý Câu hỏi<b class="caret"></b></a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quản lý câu hỏi<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="modal" data-target="#createQuestionForm"><b class="fa fa-plus"></b>Thêm câu hỏi mới</a></li>
                             <li><a href="#" onclick="Questions.listQuestion('audio');"><b class="fa fa-reply-all"></b>Câu hỏi âm thanh</a></li>
-                            <li><a href="#" onclick="Questions.listQuestion('text');"><b class="fa fa-file-text"></b>Câu hỏi Text</a></li>
+                            <li><a href="#" onclick="Questions.listQuestion('text');"><b class="fa fa-file-text"></b>Câu hỏi text</a></li>
                         </ul>
                     </li>
                     <li>
@@ -33,7 +33,7 @@
                          <?php use Illuminate\Support\Facades\Session;
                          if(session::has('admin_user')){
 
-                            echo '<li><a href="/admins/logout" ><b class="fa fa-mail-reply"></b>Logout</a></li>';
+                            echo '<li><a href="/admins/logout" ><b class="fa fa-mail-reply"></b>Đăng xuất</a></li>';
 
                          } ?>
                 </ul>

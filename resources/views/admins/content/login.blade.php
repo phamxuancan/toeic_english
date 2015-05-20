@@ -1,7 +1,7 @@
 @extends('admins.layouts.index')
 @section('content')
 <div class="container">
-    <div id="place_login" class="col-lg-8 col-lg-offset-2">
+    <div id="place_login" class="col-lg-8 col-lg-offset-2" style="margin-top: 50px;">
         <div class="panel panel-info">
             <div class="panel-heading text-center"><span style="font-weight: bold;font-size: 25px;">Đăng nhập </span></div>
                 <div class="panel-body">

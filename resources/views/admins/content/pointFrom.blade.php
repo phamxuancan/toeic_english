@@ -33,7 +33,7 @@
                          <?php use Illuminate\Support\Facades\Session;
                          if(session::has('admin_user')){
 
-                            echo '<li class=" pull-right"><a href="/admins/logout" >Đăng xuất <b class="fa fa-arrow-circle-o-right"></b></a></li>';
+                            echo '<li><a href="/admins/logout"> <b class="fa fa-mail-reply"></b>Đăng xuất </a></li>';
 
                          } ?>
                 </ul>

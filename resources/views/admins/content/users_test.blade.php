@@ -27,13 +27,14 @@
           </div>
 </div>
 @else
+<div class="panel panel-default">
      <div class="panel-heading">Danh sách người thi hôm nay</div>
               <div class="panel-body">
-               <table class="table table-bordered table-hover table-striped table_add_friend">
-                <tr class="bg-info"  >
-                      <th class="bg-info" style="text-align: center;" >Chưa có ai thi hôm nay</th>
-                  </tr>
-               </table>
+                   <table class="table table-bordered table-hover table-striped table_add_friend">
+                        <tr class="bg-info"  >
+                              <th class="bg-info" style="text-align: center;" >Chưa có ai thi hôm nay</th>
+                        </tr>
+                   </table>
               </div>
-     </div>
+ </div>
 @endif
